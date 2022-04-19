@@ -1,0 +1,26 @@
+{
+  "name": "fullstack_f8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuoc153258/fullstack-f8-nodejs.git"
+  },
+  "author": "ndphuoc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phuoc153258/fullstack-f8-nodejs/issues"
+  },
+  "homepage": "https://github.com/phuoc153258/fullstack-f8-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
