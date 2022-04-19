@@ -1,0 +1,203 @@
+.learn{
+    width: 77%;
+    position: relative;
+    margin-top: 50px;
+    bottom: 55px;
+    &-container{
+        width: 100%;
+        height: 100%;    
+        display: flex;
+        flex-direction: column;
+    }
+    &-video{
+        text-align: center;
+        background-color: #000;
+        width: 100%;
+        max-height: 393.5px;
+    }
+    &-content{
+        &-container{
+            padding: 0px 80px;
+            min-height: 350px;
+        }
+        &-header{
+            margin: 45px 0px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-heading{
+            font-weight: 600;
+            font-size: 28px;
+        }
+        &-date{
+            font-size: 13px;
+            line-height: 1.15;
+            padding: 15px 0px;
+        }
+        &-note{
+            background-color: #ebebeb;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 12px 16px;
+            border: none;
+        }
+        &-markDown{
+            font-size: 16px;
+            line-height: 2;
+            p{
+                margin: 16px 0px;
+            }
+        }
+        &-makeBy{
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            padding: 15px 0px;
+        }
+    }
+    &-track{
+        border-left: 1px solid #e7e7e7;
+        margin-top: 70px;
+        position: fixed;
+        bottom: 55px;
+        right: 0;
+        top: 0;
+        width: 23%;
+        z-index: 10;
+        &-heading{
+            font-size: 17px;
+            line-height: 1.4;
+            font-weight: 600;
+            padding: 10px 10px;
+        }
+        &-body{
+            height: 100%;
+            overflow-y: overlay;
+            flex: 1 1;
+            overscroll-behavior: contain;
+        }
+        &-item{
+
+
+            &-heading{
+                background-color: #f7f8fa;
+                padding: 10px 10px;
+                border-bottom: 1px solid #dedfe0;
+            }
+            &-title{
+                font-weight: 600;
+                color: #000;
+                font-size: 16px;
+                position: relative;
+                i{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+            &-desc{
+                line-height: 1.15;
+                color: #29303b;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+        &-stepList{
+            padding: 10px 0px;
+            &-item{
+                margin: 15px 0px;
+                padding-left: 20px;
+                &-title{
+                    color: #000;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    position: relative;
+                    i{
+                        color: #60b95f;
+                        position: absolute;
+                        top: 0;
+                        right: 10px;
+                    }
+                }
+                &-desc{
+                    color: #000;
+                    font-weight: 400;
+                    font-size: 11px;
+                    line-height: 1.15;
+                    padding-top: 11px;
+                    i{
+                        color: #888;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+.actionBar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    box-shadow: 0 -2px 3px rgb(0 0 0 / 10%);
+    gap: 0 10px;
+    &-btn{
+        &-pre{
+            display: block;
+            border: none;
+            opacity: .5;
+            border-radius: 6px;
+            color: #404040;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            line-height: 1.15;
+            i{
+                padding-right: 5px;
+            }
+        }
+        &-next{
+            display: block;
+            border: none;
+            border: 2px solid $color-orange;
+            border-radius: 6px;
+            color: $color-orange;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            line-height: 1.15;
+            i{
+                padding-left: 5px;
+            }
+        }
+    }
+    &-toggleWrap{
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        &-title{
+            font-size: 14px;
+            font-weight: 600;
+        }
+        &-btn{
+            margin: 0px 10px;
+            border: none;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

@@ -1,0 +1,158 @@
+.login{
+    display: flex;
+    height: 900px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url(https://accounts.fullstack.edu.vn/static/media/f8_bg_auth_1920.b517075e98f3051de678.png);
+    background-size: cover;
+    &-container{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        margin-top: 25px;
+    }
+    &-content{
+        background: #fff;
+        border-radius: 8px;
+        max-width: calc(800px - 32px);
+        min-height: 530px;
+        padding: 45px 15px;
+        position: relative;
+        width: 600px;
+    }
+    &-logo{
+        height: 44px;
+        object-fit: cover;
+        width: 44px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    &-title{
+        color: #292929;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 20px 0px;
+    }
+    &-header{
+        text-align: center;
+    }
+    &-form{
+        &-body{
+            max-width: 100%;
+            width: 380px;
+        }
+        &-labelGroup{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-left{
+                font-size: 14px;
+                font-weight: 600;
+                margin: 8px 0px 8px 8px;
+            }
+            &-right{
+                font-size: 14px;
+                font-weight: 600;
+                margin: 8px 8px 8px 0px;
+            }
+        }
+        &-input{
+            input{
+                background: rgba(22,24,35,.06);
+                border: 1px solid rgba(22,24,35,.06);
+                border: none;
+                border-radius: 44px;
+                height: 44px;
+                overflow: hidden;
+                font-size: 14px;
+                outline: none;
+                padding: 10px 20px;
+                width: 100%;
+                margin: 6px 0px;
+            }
+        }
+        &-desc{
+            color: #404040;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 8px 0 8px 8px;
+            text-align: left !important;
+        }
+        &-confirm{
+            background: rgba(22,24,35,.06);
+            border: 1px solid rgba(22,24,35,.06);
+            border-radius: 44px;
+            display: flex;
+            height: 44px;
+            overflow: hidden;
+            width: 100%;
+            margin: 10px 0px;
+            &-input{
+                background-color: transparent;
+                border: none;
+                display: block;
+                flex: 1 1;
+                font-size: 14px;
+                outline: none;
+                padding: 12px 20px;
+                width: 66.66666%;
+            }
+            &-btn{
+                width: 33.33333%;
+                border: none;
+                border-radius: 44px;
+                font-size: 14px;
+                font-weight: 600;
+                background-color: #ccc;
+                color: #757575;
+            }
+        }
+    }
+    &-body{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+    &-btn{
+        margin-top: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        line-height: 1.15;
+        padding: 8px 10px;
+        background-color: #24dace;
+        color: #000;
+    }
+    &-dontHaveAcc{
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 0;
+        padding: 24px 16px 0;
+    }
+    &-dontHaveAcc > a, 
+    &-forgotPassword{
+        color: $color-orange;
+        font-weight: 600;
+    }
+    &-about{
+        margin-top: 12px;
+        a{
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        span{
+            color: #fff;
+            margin: 0px 10px;
+        }
+    }
+}

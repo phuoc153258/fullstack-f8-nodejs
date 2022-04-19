@@ -2,9 +2,10 @@
   "name": "fullstack_f8",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +19,13 @@
   },
   "homepage": "https://github.com/phuoc153258/fullstack-f8-nodejs#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "node-sass": "^7.0.1",
     "nodemon": "^2.0.15"
   }
 }
