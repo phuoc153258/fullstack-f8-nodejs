@@ -1,0 +1,87 @@
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+<div class="body" style="display: flex;min-height: 100px;">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="slider-button">
+                <i class="fa-solid fa-plus slider-icon"></i>
+            </div>
+            <ul class="slider-list">
+                <li><a href="#" class="slider-item"><i class="fa-solid fa-house"></i><span>Home</span></i></a></li>
+                <li><a href="#" class="slider-item"><i class="fa-solid fa-road"></i><span>Lộ trình</span></i></a>
+                </li>
+                <li><a href="#" class="slider-item"><i class="fa-solid fa-lightbulb"></i><span>Học</span></i></a>
+                </li>
+                <li><a href="#" class="slider-item"><i class="fa-solid fa-newspaper"></i><span>Blog</span></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="banner-slider">
+            <div class="banner-item">
+                <div class="banner-item-left">
+                    <h4 class="banner-heading">
+                        Học ReactJSSSS miễn phí!
+                    </h4>
+                    <p class="banner-desc">
+                        Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu
+                        hết các dự án thường gặp với ReactJS.
+                    </p>
+                    <a href="#" class="banner-btn">Đăng ký ngay</a>
+                </div>
+                <div class="slider-item-right">
+                    <a href="#"><img src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png" alt=""
+                            class="slider-img"></a>
+                </div>
+            </div>
+            <div class="banner-item">
+                <div class="banner-item-left">
+                    <h4 class="banner-heading">
+                        Học ReactJS miễn phí!
+                    </h4>
+                    <p class="banner-desc">
+                        Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu
+                        hết các dự án thường gặp với ReactJS.
+                    </p>
+                    <a href="#" class="banner-btn">Đăng ký ngay</a>
+                </div>
+                <div class="slider-item-right">
+                    <a href="#"><img src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_04_2.png" alt=""
+                            class="slider-img"></a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="road-front-end">
+                    <div class="section-intro">
+                        <a href="#" class="section-heading">Lộ trình học Front-end <span>Mới</span></a>
+                        <a href="#" class="section-detail">Xem chi tiết <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="section-list">
+                        {{#each courses}}
+                            <div class="section-item">
+                            <a title="Kiến Thức Nhập Môn IT" href="#" class="section-img" style="background-image: url('{{this.image}}');">
+                                <button class="section-watch">Xem Khoá học</button>
+                            </a>
+                            <div class="section-name">{{this.name}}</div>
+                            <div class="section-count">
+                                <i class="fa-solid fa-users"></i>
+                                <span>{{this.totalStudent}}</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/js/slick.js"></script>
