@@ -121,6 +121,12 @@ html ::-webkit-scrollbar-track {
   background-color: #29303b;
   color: #29303b; }
 
+.pt-5px {
+  padding-top: 5px !important; }
+
+.pb-5px {
+  padding-bottom: 5px !important; }
+
 .nav {
   z-index: 20;
   padding: 0px 30px;
@@ -385,7 +391,7 @@ html ::-webkit-scrollbar-track {
   .section-item {
     width: 100%; }
   .section-img {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -820,7 +826,7 @@ html ::-webkit-scrollbar-track {
     border-radius: 8px;
     max-width: calc(800px - 32px);
     min-height: 530px;
-    padding: 45px 15px;
+    padding: 30px 15px;
     position: relative;
     width: 600px; }
   .login-logo {
@@ -858,7 +864,7 @@ html ::-webkit-scrollbar-track {
     border: 1px solid rgba(22, 24, 35, 0.06);
     border: none;
     border-radius: 44px;
-    height: 44px;
+    height: 40px;
     overflow: hidden;
     font-size: 14px;
     outline: none;
@@ -876,7 +882,7 @@ html ::-webkit-scrollbar-track {
     border: 1px solid rgba(22, 24, 35, 0.06);
     border-radius: 44px;
     display: flex;
-    height: 44px;
+    height: 40px;
     overflow: hidden;
     width: 100%;
     margin: 10px 0px; }
@@ -930,3 +936,12 @@ html ::-webkit-scrollbar-track {
     .login-about span {
       color: #fff;
       margin: 0px 10px; }
+  .login-with {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 20px;
+    padding: 10px 0px; }
+    .login-with img {
+      border-radius: 50%;
+      width: 30px; }

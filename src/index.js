@@ -29,6 +29,22 @@ app.engine(
             sum(a, b) {
                 return a + b;
             },
+            isTypeHome(course, type){
+                for (let index = 0; index < course.role.length; index++) {
+                    if(course.role[index] == type) return `<div class="section-item">
+                        <a title="Kiến Thức Nhập Môn IT" href="#" class="section-img"
+                            style="background-image: url('${course.image}');">
+                            <button class="section-watch">Xem Khoá học</button>
+                        </a>
+                        <div class="section-name">${course.name}</div>
+                        <div class="section-count">
+                            <i class="fa-solid fa-users"></i>
+                            <span>${course.totalStudent}</span>
+                        </div>
+                    </div>`
+                }                        
+
+            }
         },
     }),
 );

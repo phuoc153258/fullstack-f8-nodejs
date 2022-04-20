@@ -7,12 +7,10 @@ class SiteController {
     home(req, res, next) {
         Course.find({})
             .then((courses) => {
-                // res.render('courses', {
-                //     layout: 'mainCourses.hbs',
-                //     courses: mutipleMongooseToObject(courses),
-                // });
-                res.render('learn', {
-                    layout: 'mainLearn.hbs',
+                // res.json(courses)
+                res.render('home', {
+                    layout: 'mainHome.hbs',
+                    courses: mutipleMongooseToObject(courses),
                 });
             })
             .catch(next);

@@ -20,7 +20,7 @@
         border-radius: 8px;
         max-width: calc(800px - 32px);
         min-height: 530px;
-        padding: 45px 15px;
+        padding: 30px 15px;
         position: relative;
         width: 600px;
     }
@@ -68,7 +68,7 @@
                 border: 1px solid rgba(22, 24, 35, 0.06);
                 border: none;
                 border-radius: 44px;
-                height: 44px;
+                height: 40px;
                 overflow: hidden;
                 font-size: 14px;
                 outline: none;
@@ -89,7 +89,7 @@
             border: 1px solid rgba(22, 24, 35, 0.06);
             border-radius: 44px;
             display: flex;
-            height: 44px;
+            height: 40px;
             overflow: hidden;
             width: 100%;
             margin: 10px 0px;
@@ -153,6 +153,17 @@
         span {
             color: #fff;
             margin: 0px 10px;
+        }
+    }
+    &-with{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 20px;
+        padding: 10px 0px;
+        img{
+            border-radius: 50%;
+            width: 30px;
         }
     }
 }
