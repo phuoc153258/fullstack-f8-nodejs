@@ -1,4 +1,4 @@
-.slider{
+.slider {
     width: 7%;
     align-items: center;
     text-align: center;
@@ -12,10 +12,10 @@
     position: sticky;
     top: 0;
     z-index: 8;
-    &-wrapper{
+    &-wrapper {
         flex-shrink: 0;
     }
-    &-button{
+    &-button {
         width: 43px;
         height: 43px;
         background-color: #1473e6;
@@ -24,18 +24,18 @@
         display: flex;
         justify-content: center;
     }
-    &-button:hover .slider-icon{
+    &-button:hover .slider-icon {
         font-size: 23px;
-        transition: .25s ease;
+        transition: 0.25s ease;
     }
-    &-icon{
+    &-icon {
         font-size: 15px;
         color: #fff;
     }
-    &-list{
+    &-list {
         list-style-type: none;
     }
-    &-item{
+    &-item {
         align-items: center;
         border-radius: 16px;
         color: #404040;

@@ -1,14 +1,14 @@
-.chart{
+.chart {
     text-align: center;
     position: relative;
-    &-percent{
+    &-percent {
         color: #fff;
         font-size: 12px;
         font-weight: 600;
         text-align: center;
         line-height: 30px;
         position: absolute;
-        top: 6px ;
+        top: 6px;
         right: 6px;
         // transform: translateY(-60%);
     }

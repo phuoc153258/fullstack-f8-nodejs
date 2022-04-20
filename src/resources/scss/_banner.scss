@@ -1,33 +1,32 @@
-.banner-slider{  
+.banner-slider {
     width: 100%;
 }
-.banner-item{
-
+.banner-item {
     border-radius: 20px;
     background-color: #7612ff;
     margin: 20px;
     display: flex !important;
     padding-bottom: 36px;
 }
-.banner-item-left{
+.banner-item-left {
     width: 66.66666%;
     margin: 36px 0px;
     padding: 0px 36px;
 }
-.banner-heading{
+.banner-heading {
     color: #fff;
     font-size: 32px;
     font-weight: 700;
     line-height: 1.5;
     padding-bottom: 10px;
 }
-.banner-desc{
+.banner-desc {
     color: #fff;
     font-size: 16px;
     line-height: 1.6;
     padding-bottom: 24px;
 }
-.banner-btn{
+.banner-btn {
     border: 1px solid #fff;
     border-radius: 16px;
     font-size: 14px;
@@ -41,7 +40,7 @@
     align-items: center;
     padding: 4px 0px;
 }
-.slick-next{
+.slick-next {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -56,10 +55,10 @@
     font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
-.slick-next:hover{
+.slick-next:hover {
     color: black;
 }
-.slick-prev{
+.slick-prev {
     width: 40px;
     height: 40px;
     z-index: 1;
@@ -69,12 +68,12 @@
     transform: translateY(-50%);
     border: none;
     border-radius: 50%;
-   background-color: #fff;
+    background-color: #fff;
     color: #4b4b4b;
     font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.slick-prev:hover{
+.slick-prev:hover {
     color: black;
 }
 .slick-dots {
@@ -98,6 +97,6 @@
     background-color: #2cccff;
     width: 40px;
 }
-.slick-dots li::marker{
+.slick-dots li::marker {
     font-size: 0;
 }

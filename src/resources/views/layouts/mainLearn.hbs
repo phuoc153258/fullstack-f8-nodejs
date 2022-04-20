@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    {{>headerLearn}}
+    {{{body}}}
+    {{>footerLearn}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="/js/jquery.easypiechart.js"></script>
+    <script src="/js/dropdown.trackList.js"></script>
+    <script>
+    $(function () {
+      $('.chart').easyPieChart({
+        trackColor: '#494b4e',
+        scaleLength: 0,
+        lineWidth: 3,
+        size: 40, 
+        animate: {
+          duration: 800,
+          enabled: true 
+        },
+        easing: 'easeOutElastic',
+        lineCap: 'round'
+      });
+    });
+  </script>
+</body>
+</html>

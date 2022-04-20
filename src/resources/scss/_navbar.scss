@@ -1,23 +1,23 @@
-.nav{
+.nav {
     z-index: 20;
     padding: 0px 30px;
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: .5px solid $color-white;
+    border-bottom: 0.5px solid $color-white;
     position: sticky;
     right: 0;
     top: 0;
     background-color: #fff;
-    &-logo{
+    &-logo {
         display: flex;
         align-items: center;
-        &-img{
+        &-img {
             width: 38px;
             border-radius: 8px;
         }
-        &-heading{
+        &-heading {
             font-weight: 700;
             font-size: 14px;
             line-height: 1.4;
@@ -25,64 +25,64 @@
             margin-left: 16px;
         }
     }
-    &-body{
+    &-body {
         display: flex;
         border: 2px solid #e8e8e8;
         border-radius: 20px;
         flex: 1 1;
         height: 40px;
         padding: 0 16px 0 8px;
-        transition: border-color .2s ease-in-out;
+        transition: border-color 0.2s ease-in-out;
         width: 400px;
-        &-search{
+        &-search {
             width: 40px;
             text-align: center;
             line-height: 2.3;
             padding-right: 10px;
         }
-        &-input{
+        &-input {
             border: none;
             width: 100%;
         }
-        &-icon{
+        &-icon {
             color: $color-gray;
         }
-        &-icon:hover{
+        &-icon:hover {
             color: $color-brown;
         }
     }
-    &-body:focus-within{
+    &-body:focus-within {
         border-color: $color-brown;
     }
-    &-action{
+    &-action {
         display: flex;
         align-items: center;
         gap: 0 16px;
-        &-my-courses{
+        &-my-courses {
             color: $color-brown;
             font-weight: 600;
             cursor: pointer;
             font-size: 14px;
         }
-        &-nofi{
+        &-nofi {
             font-size: 18px;
             color: $color-gray;
         }
-        &-avatar{
+        &-avatar {
             width: 28px;
             border-radius: 50%;
         }
     }
-    &-progress{
+    &-progress {
         display: flex;
         align-items: center;
         padding-left: 5px;
-        &-completed{
+        &-completed {
             padding-left: 8px;
             color: #fff;
             font-size: 13px;
             font-weight: 400;
-            strong{
+            strong {
                 font-weight: 600;
             }
         }

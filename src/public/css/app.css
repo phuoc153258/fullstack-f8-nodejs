@@ -152,7 +152,7 @@ html ::-webkit-scrollbar-track {
     flex: 1 1;
     height: 40px;
     padding: 0 16px 0 8px;
-    transition: border-color .2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
     width: 400px; }
     .nav-body-search {
       width: 40px;
@@ -221,7 +221,7 @@ html ::-webkit-scrollbar-track {
     justify-content: center; }
   .slider-button:hover .slider-icon {
     font-size: 23px;
-    transition: .25s ease; }
+    transition: 0.25s ease; }
   .slider-icon {
     font-size: 15px;
     color: #fff; }
@@ -396,7 +396,7 @@ html ::-webkit-scrollbar-track {
     width: 100%; }
   .section-img:after {
     background-color: rgba(0, 0, 0, 0.5);
-    content: "";
+    content: '';
     inset: 0;
     opacity: 0;
     position: absolute;
@@ -406,7 +406,7 @@ html ::-webkit-scrollbar-track {
     visibility: visible;
     opacity: 1; }
   .section-img:hover .section-watch {
-    animation: sectionEase ease .3s;
+    animation: sectionEase ease 0.3s;
     visibility: visible;
     opacity: 1; }
   .section-name {
@@ -507,7 +507,7 @@ html ::-webkit-scrollbar-track {
       color: #f05123;
       font-size: 32px;
       font-weight: 400;
-      opacity: .8; }
+      opacity: 0.8; }
   .courses-img {
     border-radius: 16px;
     margin: 2px 0 20px;
@@ -528,7 +528,7 @@ html ::-webkit-scrollbar-track {
     .courses-img-preview::after {
       background-image: linear-gradient(180deg, rgba(30, 30, 28, 0), rgba(30, 30, 28, 0.9));
       bottom: 0;
-      content: "";
+      content: '';
       display: block;
       left: 0;
       position: absolute;
@@ -596,7 +596,7 @@ html ::-webkit-scrollbar-track {
       font-weight: 600; }
   .courses-content-groupName::before {
     color: #f05123;
-    content: "+";
+    content: '+';
     font-size: 26px;
     font-weight: 300;
     left: 20px;
@@ -755,12 +755,12 @@ html ::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   background-color: #f0f0f0;
-  box-shadow: 0 -2px 3px black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 -2px 3px;
   gap: 0 10px; }
   .actionBar-btn-pre {
     display: block;
     border: none;
-    opacity: .5;
+    opacity: 0.5;
     border-radius: 6px;
     color: #404040;
     font-size: 14px;

@@ -1,62 +1,62 @@
-*{
+* {
     font-family: $font-primary;
 }
-.color-gray{
+.color-gray {
     color: $color-gray !important;
 }
-.d-inline-block{
+.d-inline-block {
     display: inline-block !important;
 }
-.w-400px{
+.w-400px {
     width: 400px !important;
 }
-.container{
+.container {
     padding: 0px 44px 0px 65px;
 }
-.content{
+.content {
     width: 90%;
     margin-left: 20px;
 }
-.d-flex{
+.d-flex {
     display: flex !important;
 }
-.space-between{
+.space-between {
     justify-content: space-between;
 }
-.w-33{
+.w-33 {
     width: 33.3333% !important;
 }
-.w-66{
+.w-66 {
     width: 66.66666% !important;
 }
-.align-center{
+.align-center {
     align-items: center !important;
 }
-.wrap{
+.wrap {
     flex-wrap: wrap;
 }
-.text-center{
+.text-center {
     text-align: center !important;
 }
-.border-20{
+.border-20 {
     border-radius: 20px !important;
 }
-.text-right{
+.text-right {
     text-align: right !important;
 }
-.pl-5px{
+.pl-5px {
     padding-left: 5px !important;
 }
-.d-none{
+.d-none {
     display: none !important;
 }
-.bg-nav-dark{
+.bg-nav-dark {
     background-color: #29303b !important;
 }
-.color-white{
+.color-white {
     color: #fff !important;
 }
-.border-none{
+.border-none {
     border: none !important;
 }
 
@@ -65,26 +65,26 @@ html ::-webkit-scrollbar {
     height: 10px;
     width: 10px;
 }
-.rotate180{
+.rotate180 {
     transform: rotate(180deg) !important;
 }
 
 html ::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,.15);
+    background-color: rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 }
 
 html ::-webkit-scrollbar-track {
-    background-color: transparent; 
-    border-radius: 0; 
+    background-color: transparent;
+    border-radius: 0;
 }
-.p20-10{
+.p20-10 {
     padding: 20px 10px !important;
 }
-.m10-0{
+.m10-0 {
     margin: 10px 0px !important;
 }
-.test{
+.test {
     background-color: #29303b;
     color: #29303b;
 }

@@ -1,27 +1,30 @@
-const courseItems = document.querySelectorAll('.courses-content-heading')
-const courseDetails = document.querySelectorAll('.courses-content-details')
-const openAll = document.querySelector('.courses-sub-openAll')
+const courseItems = document.querySelectorAll('.courses-content-heading');
+const courseDetails = document.querySelectorAll('.courses-content-details');
+const openAll = document.querySelector('.courses-sub-openAll');
 
-for(let index = 0; index < courseItems.length; ++index){
-    courseItems[index].addEventListener("click", function (){
-        let i = index + 1
-        let isHave = document.getElementById('item'+i).classList.contains('d-none')
-        if(isHave) document.getElementById('item'+i).classList.remove('d-none')
-        else document.getElementById('item'+i).classList.add('d-none')
-    })
-}   
+for (let index = 0; index < courseItems.length; ++index) {
+    courseItems[index].addEventListener('click', function () {
+        let i = index + 1;
+        let isHave = document
+            .getElementById('item' + i)
+            .classList.contains('d-none');
+        if (isHave)
+            document.getElementById('item' + i).classList.remove('d-none');
+        else document.getElementById('item' + i).classList.add('d-none');
+    });
+}
 
-openAll.addEventListener('click', function (e){
-    e.preventDefault()
-    if(openAll.classList.contains('openAll')){
-        openAll.classList.remove('openAll')
+openAll.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (openAll.classList.contains('openAll')) {
+        openAll.classList.remove('openAll');
         for (let index = 0; index < courseDetails.length; index++) {
-            courseDetails[index].classList.add('d-none')
+            courseDetails[index].classList.add('d-none');
         }
     } else {
-        openAll.classList.add('openAll')
+        openAll.classList.add('openAll');
         for (let index = 0; index < courseDetails.length; index++) {
-            courseDetails[index].classList.remove('d-none')
+            courseDetails[index].classList.remove('d-none');
         }
     }
-})
+});

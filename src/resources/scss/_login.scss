@@ -1,4 +1,4 @@
-.login{
+.login {
     display: flex;
     height: 900px;
     justify-content: center;
@@ -6,7 +6,7 @@
     position: relative;
     background-image: url(https://accounts.fullstack.edu.vn/static/media/f8_bg_auth_1920.b517075e98f3051de678.png);
     background-size: cover;
-    &-container{
+    &-container {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -15,7 +15,7 @@
         z-index: 2;
         margin-top: 25px;
     }
-    &-content{
+    &-content {
         background: #fff;
         border-radius: 8px;
         max-width: calc(800px - 32px);
@@ -24,7 +24,7 @@
         position: relative;
         width: 600px;
     }
-    &-logo{
+    &-logo {
         height: 44px;
         object-fit: cover;
         width: 44px;
@@ -32,40 +32,40 @@
         margin-right: auto;
         display: block;
     }
-    &-title{
+    &-title {
         color: #292929;
         font-size: 28px;
         font-weight: 700;
         line-height: 1.4;
         margin: 20px 0px;
     }
-    &-header{
+    &-header {
         text-align: center;
     }
-    &-form{
-        &-body{
+    &-form {
+        &-body {
             max-width: 100%;
             width: 380px;
         }
-        &-labelGroup{
+        &-labelGroup {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            &-left{
+            &-left {
                 font-size: 14px;
                 font-weight: 600;
                 margin: 8px 0px 8px 8px;
             }
-            &-right{
+            &-right {
                 font-size: 14px;
                 font-weight: 600;
                 margin: 8px 8px 8px 0px;
             }
         }
-        &-input{
-            input{
-                background: rgba(22,24,35,.06);
-                border: 1px solid rgba(22,24,35,.06);
+        &-input {
+            input {
+                background: rgba(22, 24, 35, 0.06);
+                border: 1px solid rgba(22, 24, 35, 0.06);
                 border: none;
                 border-radius: 44px;
                 height: 44px;
@@ -77,23 +77,23 @@
                 margin: 6px 0px;
             }
         }
-        &-desc{
+        &-desc {
             color: #404040;
             font-size: 12px;
             line-height: 1.5;
             margin: 8px 0 8px 8px;
             text-align: left !important;
         }
-        &-confirm{
-            background: rgba(22,24,35,.06);
-            border: 1px solid rgba(22,24,35,.06);
+        &-confirm {
+            background: rgba(22, 24, 35, 0.06);
+            border: 1px solid rgba(22, 24, 35, 0.06);
             border-radius: 44px;
             display: flex;
             height: 44px;
             overflow: hidden;
             width: 100%;
             margin: 10px 0px;
-            &-input{
+            &-input {
                 background-color: transparent;
                 border: none;
                 display: block;
@@ -103,7 +103,7 @@
                 padding: 12px 20px;
                 width: 66.66666%;
             }
-            &-btn{
+            &-btn {
                 width: 33.33333%;
                 border: none;
                 border-radius: 44px;
@@ -114,13 +114,13 @@
             }
         }
     }
-    &-body{
+    &-body {
         align-items: center;
         display: flex;
         flex-direction: column;
         margin-top: 8px;
     }
-    &-btn{
+    &-btn {
         margin-top: 10px;
         font-size: 16px;
         cursor: pointer;
@@ -132,25 +132,25 @@
         background-color: #24dace;
         color: #000;
     }
-    &-dontHaveAcc{
+    &-dontHaveAcc {
         font-size: 14px;
         line-height: 1.8;
         margin-bottom: 0;
         padding: 24px 16px 0;
     }
-    &-dontHaveAcc > a, 
-    &-forgotPassword{
+    &-dontHaveAcc > a,
+    &-forgotPassword {
         color: $color-orange;
         font-weight: 600;
     }
-    &-about{
+    &-about {
         margin-top: 12px;
-        a{
+        a {
             color: #fff;
             font-size: 14px;
             line-height: 1.8;
         }
-        span{
+        span {
             color: #fff;
             margin: 0px 10px;
         }
