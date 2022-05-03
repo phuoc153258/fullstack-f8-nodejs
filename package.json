@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/phuoc153258/fullstack-f8-nodejs#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
     "morgan": "^1.10.0"
   },

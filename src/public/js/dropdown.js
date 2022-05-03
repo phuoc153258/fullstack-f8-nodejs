@@ -4,13 +4,12 @@ const openAll = document.querySelector('.courses-sub-openAll');
 
 for (let index = 0; index < courseItems.length; ++index) {
     courseItems[index].addEventListener('click', function () {
-        let i = index + 1;
         let isHave = document
-            .getElementById('item' + i)
+            .getElementById('item' + index)
             .classList.contains('d-none');
         if (isHave)
-            document.getElementById('item' + i).classList.remove('d-none');
-        else document.getElementById('item' + i).classList.add('d-none');
+            document.getElementById('item' + index).classList.remove('d-none');
+        else document.getElementById('item' + index).classList.add('d-none');
     });
 }
 

@@ -19,22 +19,16 @@
         <div class="courses">
             <div class="container d-flex">
                 <div class="courses-left w-66">
-                    <h4 class="courses-heading">Kiến thức nhập môn IT</h4>
-                    <p class="courses-desc">Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các
-                        videos tại khóa này trước nhé.</p>
+                    <h4 class="courses-heading">{{course.name}}</h4>
+                    <p class="courses-desc">{{course.description}}</p>
                     <div class="courses-topic">
                         <h3 class="courses-topic-heading">
                             Bạn sẽ học được gì?
                         </h3>
                         <ul class="courses-topic-list">
-                            <li><i class="fa-solid fa-check"></i> <span>Các kiến thức cơ bản, nền móng của ngành
-                                    IT</span></li>
-                            <li><i class="fa-solid fa-check"></i> <span>Các kiến thức cơ bản, nền móng của ngành
-                                    IT</span></li>
-                            <li><i class="fa-solid fa-check"></i> <span>Các kiến thức cơ bản, nền móng của ngành
-                                    IT</span></li>
-                            <li><i class="fa-solid fa-check"></i> <span>Các kiến thức cơ bản, nền móng của ngành
-                                    IT</span></li>
+                            {{#each course.courseOverview}}
+                                <li><i class="fa-solid fa-check"></i> <span>{{this}}</span></li>
+                            {{/each}}
                         </ul>
                     </div>
                     <div class="courses-sub">
@@ -44,15 +38,14 @@
                         <div class="d-flex space-between">
                             <ul class="courses-sub-subHead">
                                 <li>
-                                    <strong>4 </strong>chương
+                                    <strong>{{{getLengthObject course.courseContent}}} </strong>chương
                                 </li>
                                 <li>
                                     <i class="fa-solid fa-circle"></i>
                                 </li>
                                 <li>
                                     <strong>
-                                        10
-                                    </strong>
+                                    {{{getTotalLengthLesson course.courseContent}}} </strong>
                                     bài học
                                 </li>
                                 <li>
@@ -60,7 +53,7 @@
                                 </li>
                                 <li>
                                     Thời lượng
-                                    <strong>03 giờ 25 phút</strong>
+                                    <strong>{{{getTotalVideoLength course.courseContent}}}</strong>
                                 </li>
                             </ul>
                             <a href="#" class="courses-sub-openAll">Mở rộng tất cả</a>
@@ -68,80 +61,50 @@
                     </div>
                     <div class="courses-content">
                         <div class="courses-content-list">
-                            <div class="courses-content-item">
-                                <div class="courses-content-heading">
-                                    <span class="courses-content-groupName">
-                                        <strong>1. Khái niệm kỹ thuật cần biết</strong>
-                                    </span>
-                                    <span class="courses-content-countLesson">
-                                        2 bài học
-                                    </span>
-                                </div>
-                                <div class="courses-content-details d-none" id="item1">
-                                    <div class="courses-content-details-lesson">
-                                        <div>
-                                            <i class="fa-solid fa-circle-play"></i>
-                                            <span class="pl-5px">1. Mô hình Client - Server là gì?</span>
-                                        </div>
-                                        <span class="text-right">11:35</span>
+                            <div class="courses-content-item">  
+                                {{#each course.courseContent}}
+                                    <div class="courses-content-heading">
+                                        <span class="courses-content-groupName">
+                                            <strong>1. {{this.name}}</strong>
+                                        </span>
+                                        <span class="courses-content-countLesson">
+                                            {{{getLengthObject this.lesson}}} bài học
+                                        </span>
                                     </div>
-                                    <div class="courses-content-details-lesson">
-                                        <div>
-                                            <i class="fa-solid fa-circle-play"></i>
-                                            <span class="pl-5px">1. Mô hình Client - Server là gì?</span>
+                                        <div class="courses-content-details d-none" id="item{{@index}}">
+                                            {{#each this.lesson}}
+                                                <div class="courses-content-details-lesson">
+                                                    <div>
+                                                        <i class="fa-solid fa-circle-play"></i>
+                                                        <span class="pl-5px">1. {{this.name}}</span>
+                                                    </div>
+                                                    <span class="text-right">{{{numberToTime this.videoLength}}}</span>
+                                                </div>
+                                            {{/each}}
                                         </div>
-                                        <span class="text-right">11:35</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="courses-content-item">
-                                <div class="courses-content-heading">
-                                    <span class="courses-content-groupName">
-                                        <strong>1. Khái niệm kỹ thuật cần biết</strong>
-                                    </span>
-                                    <span class="courses-content-countLesson">
-                                        2 bài học
-                                    </span>
-                                </div>
-                                <div class="courses-content-details d-none" id="item2">
-                                    <div class="courses-content-details-lesson">
-                                        <div>
-                                            <i class="fa-solid fa-circle-play"></i>
-                                            <span class="pl-5px">1. Mô hình Client - Server là gì?</span>
-                                        </div>
-                                        <span class="text-right">11:35</span>
-                                    </div>
-                                    <div class="courses-content-details-lesson">
-                                        <div>
-                                            <i class="fa-solid fa-circle-play"></i>
-                                            <span class="pl-5px">1. Mô hình Client - Server là gì?</span>
-                                        </div>
-                                        <span class="text-right">11:35</span>
-                                    </div>
-                                </div>
+                                {{/each}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="courses-right w-33 text-center">
                     <div class="courses-img">
-                        <div class="courses-img-preview"></div>
+                        <div class="courses-img-preview" style="background-image: url({{course.image}});"></div>
                         <div class="courses-img-content">
                             <a href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <p>Xem giới thiệu khoá học</p>
                         </div>
                     </div>
                     <h6>Đã đăng ký</h6>
-                    <button class="courses-btn">Tiếp tục học</button>
+                    <button class="courses-btn" onclick="goLearn('{{course.slug}}')">Tiếp tục học</button>
                     <ul class="courses-preview-list">
-                        <li class="courses-preview-item"><i class="fa fa-tachometer"></i><span>Trình độ cơ bản</span>
+                        <li class="courses-preview-item"><i class="fa fa-tachometer"></i><span>{{course.level}}</span>
                         </li>
-                        <li class="courses-preview-item"><i class="fa-solid fa-film"></i><span>Trình độ cơ bản</span>
+                        <li class="courses-preview-item"><i class="fa-solid fa-film"></i><span>Tổng số <strong>{{{getTotalLengthLesson course.courseContent}}}</strong> bài học</span>
                         </li>
-                        <li class="courses-preview-item"><i class="fa-solid fa-clock"></i><span>Trình độ cơ bản</span>
+                        <li class="courses-preview-item"><i class="fa-solid fa-clock"></i><span>Thời lượng <strong>{{{getTotalVideoLength course.courseContent}}}</strong></span>
                         </li>
-                        <li class="courses-preview-item"><i class="fa-solid fa-battery-full"></i><span>Trình độ cơ
-                                bản</span></li>
+                        <li class="courses-preview-item"><i class="fa-solid fa-battery-full"></i><span>{{course.statusLearn}}</span></li>
                     </ul>
                 </div>
             </div>

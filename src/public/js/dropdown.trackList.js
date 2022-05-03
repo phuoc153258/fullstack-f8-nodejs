@@ -3,16 +3,15 @@ const stepListItems = document.querySelectorAll('.learn-track-stepList');
 
 for (let index = 0; index < trackItems.length; ++index) {
     trackItems[index].addEventListener('click', function () {
-        let i = index + 1;
         let isHave = document
-            .getElementById('item' + i)
+            .getElementById('item' + index)
             .classList.contains('d-none');
         if (isHave) {
-            document.getElementById('item' + i).classList.remove('d-none');
-            document.getElementById('icon' + i).classList.add('rotate180');
+            document.getElementById('item' + index).classList.remove('d-none');
+            document.getElementById('icon' + index).classList.add('rotate180');
         } else {
-            document.getElementById('item' + i).classList.add('d-none');
-            document.getElementById('icon' + i).classList.remove('rotate180');
+            document.getElementById('item' + index).classList.add('d-none');
+            document.getElementById('icon' + index).classList.remove('rotate180');
         }
     });
 }

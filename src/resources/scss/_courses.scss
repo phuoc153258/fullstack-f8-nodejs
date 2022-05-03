@@ -20,7 +20,7 @@
         &-heading {
             font-size: 20px;
             font-weight: 700;
-            padding-bottom: 4px;
+            padding-bottom: 15px;
         }
 
         &-list {
@@ -30,7 +30,7 @@
             padding-bottom: 12px;
 
             li {
-                padding: 0px 24px;
+                padding: 5px 24px;
                 position: relative;
             }
 
@@ -99,7 +99,6 @@
         width: calc(100% - 2px);
 
         &-preview {
-            background-image: url(https://files.fullstack.edu.vn/f8-prod/courses/7.png);
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: 100% auto;
@@ -161,7 +160,12 @@
     }
 
     &-preview {
+
         &-list {
+            position: relative;
+            top: 0;
+            left: 25%;
+            text-align: left;
             list-style-type: none;
         }
 
@@ -176,14 +180,12 @@
             i {
                 position: absolute;
                 top: 4px;
-                left: 30%;
+                left: 5px;
             }
         }
     }
 
     &-content {
-        &-list {
-        }
 
         &-heading {
             display: flex;
@@ -193,6 +195,7 @@
             background-color: #f5f5f5;
             border: 1px solid #ebebeb;
             padding: 8px 30px 8px 48px;
+            margin: 10px 0px;
             border-radius: 6px;
             align-items: center;
             line-height: 1.4;

@@ -1,15 +1,9 @@
 <div class="learn">
   <div class="learn-content">
     <div class="learn-video">
-      <iframe
-        width="699"
-        height="393"
-        src="https://www.youtube.com/embed/OuNo8Tkb3lI"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <iframe width="699" height="393" src="https://www.youtube.com/embed/OuNo8Tkb3lI" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
     <div class="learn-content-container">
       <div class="learn-content-header">
@@ -37,72 +31,30 @@
         Nội dung khoá học
       </h3>
       <div class="learn-track-body">
+        {{#each course.courseContent}}
         <div class="learn-track-item">
           <div class="learn-track-item-heading">
-            <h3 class="learn-track-item-title">1. Khái niệm kỹ thuật cần biết<i
-                class="fa-solid fa-angle-down"
-                id="icon1"
-              ></i></h3>
-            <span class="learn-track-item-desc">1/2 | 22:09</span>
+            <h3 class="learn-track-item-title">1. {{this.name}}<i class="fa-solid fa-angle-down"
+                id="icon{{@index}}"></i></h3>
+            <span class="learn-track-item-desc">{{{getLessonCompletedInChapter ../user.detailCourses ../course._id this.id}}}/{{{getLengthChapterLesson this.lesson}}} | {{{getTotalTimeLengthChapter this.lesson}}}</span>
           </div>
-          <div class="learn-track-stepList d-none" id="item1">
-            <div class="learn-track-stepList-item">
-              <div class="learn-track-stepList-item-info">
-                <h3 class="learn-track-stepList-item-title">1. Mô hình Client -
-                  Server là gì?
-                  <i class="fa-solid fa-circle-check"></i></h3>
-                <p class="learn-track-stepList-item-desc">
-                  <i class="fa-solid fa-circle-play"></i>
-                  11.35
-                </p>
+          <div class="learn-track-stepList d-none" id="item{{@index}}">
+            {{#each this.lesson}}
+              <div class="learn-track-stepList-item">
+                <div class="learn-track-stepList-item-info">
+                  <h3 class="learn-track-stepList-item-title">1. {{this.name}}
+                    <i class="fa-solid fa-circle-check"></i>
+                  </h3>
+                  <p class="learn-track-stepList-item-desc">
+                    <i class="fa-solid fa-circle-play"></i>
+                    {{{numberToTime this.videoLength}}}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="learn-track-stepList-item">
-              <div class="learn-track-stepList-item-info">
-                <h3 class="learn-track-stepList-item-title">1. Mô hình Client -
-                  Server là gì?
-                  <i class="fa-solid fa-circle-check"></i></h3>
-                <p class="learn-track-stepList-item-desc">
-                  <i class="fa-solid fa-circle-play"></i>
-                  11.35
-                </p>
-              </div>
-            </div>
+            {{/each}}
           </div>
         </div>
-        <div class="learn-track-item">
-          <div class="learn-track-item-heading">
-            <h3 class="learn-track-item-title">1. Khái niệm kỹ thuật cần biết<i
-                class="fa-solid fa-angle-down"
-                id="icon2"
-              ></i></h3>
-            <span class="learn-track-item-desc">1/2 | 22:09</span>
-          </div>
-          <div class="learn-track-stepList d-none" id="item2">
-            <div class="learn-track-stepList-item">
-              <div class="learn-track-stepList-item-info">
-                <h3 class="learn-track-stepList-item-title">1. Mô hình Client -
-                  Server là gì?
-                  <i class="fa-solid fa-circle-check"></i></h3>
-                <p class="learn-track-stepList-item-desc">
-                  <i class="fa-solid fa-circle-play"></i>
-                  11.35
-                </p>
-              </div>
-            </div>
-            <div class="learn-track-stepList-item">
-              <div class="learn-track-stepList-item-info">
-                <h3 class="learn-track-stepList-item-title">1. Mô hình Client -
-                  Server là gì?
-                  <i class="fa-solid fa-circle-check"></i></h3>
-                <p class="learn-track-stepList-item-desc">
-                  <i class="fa-solid fa-circle-play"></i>
-                  11.35
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {{/each}}
       </div>
     </div>
   </div>

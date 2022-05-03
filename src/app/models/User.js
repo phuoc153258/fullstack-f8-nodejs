@@ -13,14 +13,7 @@ const User = new Schema({
             'https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg',
     },
     phoneNumber: { type: Number },
-    facebook: { type: String, default: '' },
-    courses: [
-        {
-            id: { type: String },
-            courseId: { type: String },
-            courseProcess: { type: Array },
-        },
-    ],
+    facebook: { type: String, default: '' }
 });
 
 module.exports = mongoose.model('User', User);

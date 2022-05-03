@@ -18,11 +18,12 @@ const Course = new Schema({
                     id: String,
                     name: String,
                     videoId: String,
-                    isCompleted: Boolean,
+                    videoLength: Number,
                 },
             ],
         },
     ],
+    slug: {type:String,required:true}
 });
 
 module.exports = mongoose.model('Course', Course);

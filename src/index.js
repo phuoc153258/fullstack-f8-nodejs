@@ -6,6 +6,8 @@ const port = 3000;
 const route = require('./routes');
 const app = express();
 const db = require('./config/db');
+const helperHbs = require('./util/helperHbs')
+const cookieParser = require('cookie-parser')
 
 db.connect();
 
@@ -17,6 +19,8 @@ app.use(
 
 app.use(express.json());
 
+app.use(cookieParser())
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(morgan('combined'))
@@ -25,27 +29,7 @@ app.engine(
     '.hbs',
     engine({
         extname: '.hbs',
-        helpers: {
-            sum(a, b) {
-                return a + b;
-            },
-            isTypeHome(course, type){
-                for (let index = 0; index < course.role.length; index++) {
-                    if(course.role[index] == type) return `<div class="section-item">
-                        <a title="Kiến Thức Nhập Môn IT" href="#" class="section-img"
-                            style="background-image: url('${course.image}');">
-                            <button class="section-watch">Xem Khoá học</button>
-                        </a>
-                        <div class="section-name">${course.name}</div>
-                        <div class="section-count">
-                            <i class="fa-solid fa-users"></i>
-                            <span>${course.totalStudent}</span>
-                        </div>
-                    </div>`
-                }                        
-
-            }
-        },
+        helpers: helperHbs,
     }),
 );
 app.set('view engine', '.hbs');

@@ -1,3 +1,7 @@
+@keyframes navList {
+    from {top: 25px;}
+    to {top: 40px;}
+}
 .nav {
     z-index: 20;
     padding: 0px 30px;
@@ -85,6 +89,44 @@
             strong {
                 font-weight: 600;
             }
+        }
+    }
+    &-list{
+        position: absolute;
+        background-color: #fff;
+        top: 40px;
+        right: 0;
+        width: 280px;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 15px;
+        padding: 10px 24px;
+        list-style-type: none;
+        animation: navList .3s ease;
+        hr{
+            border: none;
+            border-top: 1px solid rgba(0,0,0,.05);
+            margin: 8px 0;
+        }
+        &-item{
+            font-size: 14px;
+            padding: 10px 0px;
+            a{
+                color: #666;
+            }
+        }
+        &-img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        &-name{
+            color: #292929;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        &-username{
+            color: #757575;
+            font-size: 14px;
         }
     }
 }
