@@ -94,7 +94,7 @@ module.exports = {
                 countLessonUser += userArr[index].lessonCompleted.length
             }
         }
-        return countLessonUser / countLesson * 100
+        return Math.floor(countLessonUser / countLesson * 100);
     },
     getLessonCompletedInChapter(detailCourses, idCourse, idChapter){
         let countLesson = 0;
@@ -121,5 +121,19 @@ module.exports = {
             return `${addLeadingZeros(hours, 2)}:${addLeadingZeros(minutes, 2)}:${addLeadingZeros(seconds, 2)}`;
         } 
         return `${addLeadingZeros(minutes, 2)}:${addLeadingZeros(seconds, 2)}`;
+    },
+    checkLessonCompleted(idLesson, userCourses, idCourse){
+        let isCompleted = false
+        for (let index = 0; index < userCourses.length; index++) {
+            if(userCourses[index].idCourse == idCourse){
+                for (let i = 0; i < userCourses[index].lessonCompleted.length; i++) {
+                    if(userCourses[index].lessonCompleted[i].idLesson == idLesson){
+                        isCompleted = true
+                    }
+                }
+            }
+        }
+        if(isCompleted) return `<i class="fa-solid fa-circle-check completed-lesson"></i>`
+        else return `<i class="fa-solid fa-circle-check"></i>`
     }
 };

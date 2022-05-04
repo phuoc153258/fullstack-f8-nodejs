@@ -1,4 +1,5 @@
 <div class="learn">
+  {{log 'dsa' user }}
   <div class="learn-content">
     <div class="learn-video">
       <iframe width="699" height="393" src="https://www.youtube.com/embed/OuNo8Tkb3lI" title="YouTube video player"
@@ -43,7 +44,7 @@
               <div class="learn-track-stepList-item">
                 <div class="learn-track-stepList-item-info">
                   <h3 class="learn-track-stepList-item-title">1. {{this.name}}
-                    <i class="fa-solid fa-circle-check"></i>
+                    {{{checkLessonCompleted this.id ../../user.detailCourses ../../course._id}}}
                   </h3>
                   <p class="learn-track-stepList-item-desc">
                     <i class="fa-solid fa-circle-play"></i>
