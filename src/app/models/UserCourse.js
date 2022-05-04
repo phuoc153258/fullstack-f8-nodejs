@@ -6,7 +6,7 @@ const UserCourse = new Schema({
     detailCourses: [
         {
             id: String,
-            idCourses: String,
+            idCourse: String,
             indexVideo: {type: Number, default: 0},
             lessonCompleted: [{
                 idLesson: String,

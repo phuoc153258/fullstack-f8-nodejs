@@ -122,7 +122,7 @@ module.exports = {
         } 
         return `${addLeadingZeros(minutes, 2)}:${addLeadingZeros(seconds, 2)}`;
     },
-    checkLessonCompleted(idLesson, userCourses, idCourse){
+    checkLessonCompleted(idLesson, userCourses, idCourse, idChapter, idUser){
         let isCompleted = false
         for (let index = 0; index < userCourses.length; index++) {
             if(userCourses[index].idCourse == idCourse){
@@ -133,7 +133,52 @@ module.exports = {
                 }
             }
         }
-        if(isCompleted) return `<i class="fa-solid fa-circle-check completed-lesson"></i>`
-        else return `<i class="fa-solid fa-circle-check"></i>`
+        if(isCompleted) return `<a href="#" onclick="handleCompletedLesson(true,'${idLesson}','${idChapter}','${idCourse}')"><i class="fa-solid fa-circle-check completed-lesson"></i></a>`
+        else return `<a href="#" onclick="handleCompletedLesson(false,'${idLesson}','${idChapter}','${idCourse}')"><i class="fa-solid fa-circle-check"></i></a>`
+    },
+    renderVideoId(user,course){
+        let idx = 0;
+        for (let index = 0; index < user.detailCourses.length; index++) {
+            if(user.detailCourses[index].idCourse == course._id){
+                for (let i = 0; i < course.courseContent.length; i++) {
+                    for (let j = 0; j < course.courseContent[i].lesson.length; j++) {
+                        if(idx == user.detailCourses[index].indexVideo){
+                            return course.courseContent[i].lesson[j].videoId
+                        } 
+                        else idx++
+                    }
+                }
+            }
+        }
+    },
+    renderCourseName(user,course){
+        let idx = 0;
+        for (let index = 0; index < user.detailCourses.length; index++) {
+            if(user.detailCourses[index].idCourse == course._id){
+                for (let i = 0; i < course.courseContent.length; i++) {
+                    for (let j = 0; j < course.courseContent[i].lesson.length; j++) {
+                        if(idx == user.detailCourses[index].indexVideo){
+                            return course.courseContent[i].lesson[j].name
+                        } 
+                        else idx++
+                    }
+                }
+            }
+        }
+    },
+    renderDescribeLesson(user,course){
+        let idx = 0;
+        for (let index = 0; index < user.detailCourses.length; index++) {
+            if(user.detailCourses[index].idCourse == course._id){
+                for (let i = 0; i < course.courseContent.length; i++) {
+                    for (let j = 0; j < course.courseContent[i].lesson.length; j++) {
+                        if(idx == user.detailCourses[index].indexVideo){
+                            return course.courseContent[i].lesson[j].describeLesson
+                        } 
+                        else idx++
+                    }
+                }
+            }
+        }
     }
 };

@@ -8,6 +8,7 @@ const app = express();
 const db = require('./config/db');
 const helperHbs = require('./util/helperHbs')
 const cookieParser = require('cookie-parser')
+const methodOverride = require('method-override')
 
 db.connect();
 
@@ -16,6 +17,8 @@ app.use(
         extended: true,
     }),
 );
+
+app.use(methodOverride('_method'))
 
 app.use(express.json());
 

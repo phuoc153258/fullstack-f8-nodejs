@@ -1,15 +1,14 @@
 <div class="learn">
-  {{log 'dsa' user }}
   <div class="learn-content">
     <div class="learn-video">
-      <iframe width="699" height="393" src="https://www.youtube.com/embed/OuNo8Tkb3lI" title="YouTube video player"
+      <iframe width="699" height="393" src="https://www.youtube.com/embed/{{{renderVideoId user course}}}" title="YouTube video player"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </div>
     <div class="learn-content-container">
       <div class="learn-content-header">
         <div class="learn-content-header-left">
-          <h3 class="learn-content-heading">Mô hình Client - Server là gì?</h3>
+          <h3 class="learn-content-heading">{{{renderCourseName user course}}}</h3>
           <p class="learn-content-date">Cập nhật tháng 2 năm 2022</p>
         </div>
         <div class="learn-content-header-right">
@@ -18,10 +17,7 @@
         </div>
       </div>
       <div class="learn-content-markDown">
-        <p>Tham gia nhóm Học lập trình tại F8 trên Facebook để cùng nhau trao
-          đổi trong quá trình học tập ❤️</p>
-        <p>Các bạn subscribe kênh Youtube F8 Official để nhận thông báo khi có
-          các bài học mới nhé ❤️</p>
+        {{{renderDescribeLesson user course}}}
       </div>
     </div>
     <p class="learn-content-makeBy">Make by Phước ❤️</p>
@@ -40,11 +36,11 @@
             <span class="learn-track-item-desc">{{{getLessonCompletedInChapter ../user.detailCourses ../course._id this.id}}}/{{{getLengthChapterLesson this.lesson}}} | {{{getTotalTimeLengthChapter this.lesson}}}</span>
           </div>
           <div class="learn-track-stepList d-none" id="item{{@index}}">
-            {{#each this.lesson}}
+            {{#each this.lesson}} 
               <div class="learn-track-stepList-item">
                 <div class="learn-track-stepList-item-info">
                   <h3 class="learn-track-stepList-item-title">1. {{this.name}}
-                    {{{checkLessonCompleted this.id ../../user.detailCourses ../../course._id}}}
+                    {{{checkLessonCompleted this.id ../../user.detailCourses ../../course._id ../this.id}}}
                   </h3>
                   <p class="learn-track-stepList-item-desc">
                     <i class="fa-solid fa-circle-play"></i>
@@ -60,3 +56,9 @@
     </div>
   </div>
 </div>
+<form method="POST" action="/learning/handle/lesson-completed?_method=PUT" id="form-handle-completed-lesson">
+  <input type="text" value="" name="isCompleted" id="is-completed-js">
+  <input type="text" value="" name="idLesson" id="id-lesson-js">
+  <input type="text" value="" name="idChapter" id="id-chapter-js">
+  <input type="text" value="" name="idCourse" id="id-course-js">
+</form>

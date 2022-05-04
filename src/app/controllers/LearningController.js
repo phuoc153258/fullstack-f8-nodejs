@@ -33,6 +33,35 @@ class SiteController {
             })
         });
     }
+
+    // [PUT] /handle/lesson-completed?_method=PUT
+    handleLessonCompleted(req, res, next) {
+        let lessonCompeletedObj = {}
+        lessonCompeletedObj.idChapter = req.body.idChapter
+        lessonCompeletedObj.idLesson = req.body.idLesson
+        jwt.verify(req.cookies.token, keyJWT, function(err, decoded) {
+            if(err) {
+                res.redirect('/auth')
+                return;
+            }
+            if(req.body.isCompleted == 'false'){
+                UserCourse.findOne({idUser: decoded.user})
+                    .then(user => {
+                        for (let index = 0; index < user.detailCourses.length; index++) {
+                            if(user.detailCourses[index].idCourse == req.body.idCourse){
+                                user.detailCourses[index].lessonCompleted.push(lessonCompeletedObj) 
+                            }
+                        }
+                        UserCourse.updateOne({idUser: decoded.user}, user)
+                            .then(res.redirect('/'))
+                            .catch(err => res.json(err))
+                    })
+                    .catch(err => res.json(err))
+            } else {
+                res.redirect('back')
+            }
+        });
+    }
 }
 
 module.exports = new SiteController();
