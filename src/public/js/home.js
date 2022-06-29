@@ -3,7 +3,7 @@ function delete_cookie(name) {
 }
 function logOut(){
     delete_cookie('token')
-    window.location.replace("http://localhost:3000/login");
+    location.reload();
 }
 function showUserMenu(){
     let userImg = document.querySelector('#user-img')

@@ -133,7 +133,7 @@ module.exports = {
                 }
             }
         }
-        if(isCompleted) return `<a href="#" onclick="handleCompletedLesson(true,'${idLesson}','${idChapter}','${idCourse}')"><i class="fa-solid fa-circle-check completed-lesson"></i></a>`
+        if(isCompleted) return `<i class="fa-solid fa-circle-check completed-lesson"></i>`
         else return `<a href="#" onclick="handleCompletedLesson(false,'${idLesson}','${idChapter}','${idCourse}')"><i class="fa-solid fa-circle-check"></i></a>`
     },
     renderVideoId(user,course){
@@ -180,5 +180,29 @@ module.exports = {
                 }
             }
         }
+    },
+    renderIdxVideo(idVideo, courseContent){
+        let idx = 0;
+        for (let index = 0; index < courseContent.length; index++) {
+            for (let i = 0; i < courseContent[index].lesson.length; i++) {
+                if(courseContent[index].lesson[i].id == idVideo) {
+                    return idx
+                }
+                else idx++
+            }
+        }
+        return 0
+    },
+    renderIdxVideoList(idVideo, courseContent){
+        let idx = 1;
+        for (let index = 0; index < courseContent.length; index++) {
+            for (let i = 0; i < courseContent[index].lesson.length; i++) {
+                if(courseContent[index].lesson[i].id == idVideo) {
+                    return idx
+                }
+                else idx++
+            }
+        }
+        return 0
     }
 };

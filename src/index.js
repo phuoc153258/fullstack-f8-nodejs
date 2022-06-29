@@ -1,14 +1,13 @@
 const express = require('express');
-const morgan = require('morgan');
-const { engine } = require('express-handlebars');
-const path = require('path');
-const port = 3000;
-const route = require('./routes');
-const app = express();
-const db = require('./config/db');
-const helperHbs = require('./util/helperHbs')
 const cookieParser = require('cookie-parser')
 const methodOverride = require('method-override')
+const { engine } = require('express-handlebars');
+const route = require('./routes')
+const db = require('./config/db');
+const helperHbs = require('./util/helperHbs')
+const path = require('path');
+const port = 3000;
+const app = express();
 
 db.connect();
 
@@ -25,8 +24,6 @@ app.use(express.json());
 app.use(cookieParser())
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use(morgan('combined'))
 
 app.engine(
     '.hbs',

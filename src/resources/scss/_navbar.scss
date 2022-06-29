@@ -76,6 +76,14 @@
             width: 28px;
             border-radius: 50%;
         }
+        &-loginBtn {
+            background-color: $color-orange;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 9px 20px;
+        }
     }
     &-progress {
         display: flex;

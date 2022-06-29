@@ -201,6 +201,13 @@ html ::-webkit-scrollbar-track {
     .nav-action-avatar {
       width: 28px;
       border-radius: 50%; }
+    .nav-action-loginBtn {
+      background-color: #f05123;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 20px; }
   .nav-progress {
     display: flex;
     align-items: center;
@@ -886,7 +893,8 @@ html ::-webkit-scrollbar-track {
     width: 44px;
     margin-left: auto;
     margin-right: auto;
-    display: block; }
+    display: block;
+    border-radius: 10px; }
   .login-title {
     color: #292929;
     font-size: 28px;

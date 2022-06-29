@@ -2,26 +2,30 @@
     <div class="nav-logo">
         <a href="#">
             <img class="nav-logo-img"
-                src="https://static.fullstack.edu.vn/static/media/f8-icon.7ad2b161d5e80c87e516.png" alt="">
+                src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="">
         </a>
         <h4 class="nav-logo-heading">Học Lập Trình Để Đi Làm</h4>
     </div>
     <div class="d-inline-block w-400px">
         <div class="nav-body">
             <div class="nav-body-search">
-                <a href="#"><i class="fa-solid fa-magnifying-glass nav-body-icon"></i></a>
+                <a href="#"><i class="falog-solid fa-magnifying-glass nav-body-icon"></i></a>
             </div>
             <input type="text" class="nav-body-input" placeholder="Tìm kiếm khoá học, bài viết, video,...">
         </div>
     </div>
     <div class="nav-action">
+        {{#if user}}
         <a href="#" class="nav-action-my-courses">Khoá học của tôi</a>
         <a href="#"><i class="fa-solid fa-bell nav-action-nofi"></i></a>
         <div class="p-realative">
-            <a href="#" onclick="showUserMenu()"><img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg" class="nav-action-avatar hide" alt="" id="user-img"></a>
+            <a href="#" onclick="showUserMenu()"><img
+                    src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                    class="nav-action-avatar hide" alt="" id="user-img"></a>
             <ul class="nav-list d-none" id="user-menu">
                 <li class="nav-list-item d-flex space-between align-center ">
-                    <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg" class="nav-list-img" alt="">
+                    <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                        class="nav-list-img" alt="">
                     <div class="nav-list-userInfo">
                         <h3 class="nav-list-name">Nguyễn Đôn Phước</h3>
                         <p class="nav-list-username">@nguyendonphuoc</p>
@@ -51,5 +55,8 @@
                 </li>
             </ul>
         </div>
+        {{else}}
+        <a href="./login" class="nav-action-loginBtn">Đăng nhập</a>
+        {{/if}}
     </div>
 </div>

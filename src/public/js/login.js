@@ -21,9 +21,9 @@ function getCookie(cname) {
 function delete_cookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-function login() {
+function login(event) {
     $.ajax({
-        url: 'http://localhost:3000/login/handle',
+        url: 'http://localhost:3000/login/handler',
         type: 'POST',
         data: {
             email: $('#email').val(),
@@ -33,7 +33,7 @@ function login() {
         .then(data => {
             if(data.message =='Success') {
                 setCookie('token', data.token, 1)
-                window.location.replace("http://localhost:3000/");
+                window.location = 'http://localhost:3000/';
             }
             else {
                 console.log("Failed")
@@ -42,4 +42,5 @@ function login() {
         .catch(err => {
             console.log(err)
         })
+
 }

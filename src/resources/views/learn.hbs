@@ -37,10 +37,12 @@
           </div>
           <div class="learn-track-stepList d-none" id="item{{@index}}">
             {{#each this.lesson}} 
-              <div class="learn-track-stepList-item">
+              <div class="learn-track-stepList-item" onclick="updateIdxVideo({{{renderIdxVideo this.id ../../course.courseContent}}}, '{{../../course._id}}')">
                 <div class="learn-track-stepList-item-info">
-                  <h3 class="learn-track-stepList-item-title">1. {{this.name}}
+                  <h3 class="learn-track-stepList-item-title">{{{renderIdxVideoList this.id ../../course.courseContent}}}. {{this.name}}
+                    <div id="stop-propagation-lesson">
                     {{{checkLessonCompleted this.id ../../user.detailCourses ../../course._id ../this.id}}}
+                    </div>
                   </h3>
                   <p class="learn-track-stepList-item-desc">
                     <i class="fa-solid fa-circle-play"></i>
@@ -56,9 +58,13 @@
     </div>
   </div>
 </div>
-<form method="POST" action="/learning/handle/lesson-completed?_method=PUT" id="form-handle-completed-lesson">
+<form method="POST" action="/learning/handle/lesson-completed?_method=PUT" id="form-handle-completed-lesson" hidden>
   <input type="text" value="" name="isCompleted" id="is-completed-js">
   <input type="text" value="" name="idLesson" id="id-lesson-js">
   <input type="text" value="" name="idChapter" id="id-chapter-js">
   <input type="text" value="" name="idCourse" id="id-course-js">
+</form>
+<form method="POST" action="/learning/handle/index-video?_method=PUT" id="form-handle-index-video" hidden>
+  <input type="text" value="" name="idCourse" id="idcourse-handle-index-js">
+  <input type="number" value="" name="indexVideo" id="index-video-js">
 </form>
