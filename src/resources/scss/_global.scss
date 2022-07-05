@@ -84,19 +84,41 @@ html ::-webkit-scrollbar-track {
 .m10-0 {
     margin: 10px 0px !important;
 }
+.mt-50px{
+    margin-top: 50px !important;
+}
+.mt-30px{
+    margin-top: 30px !important;
+}
 .test {
     background-color: #29303b;
     color: #29303b;
 }
-.pt-5px{
+.pt-5px {
     padding-top: 5px !important;
 }
-.pb-5px{
+.pb-5px {
     padding-bottom: 5px !important;
 }
-.p-realative{
+.p-realative {
     position: relative !important;
 }
-.completed-lesson{
+.completed-lesson {
     color: #60b95f !important;
+}
+.home-active {
+    background-color: #F5F5F5;
+    color: #1a1a1a;
+}
+.banner-color-1{
+    background-color: #2877FA;
+}
+.banner-color-2{
+    background-color: #7612ff;
+}
+.banner-color-3{
+    background: linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))
+}
+.banner-color-4{
+    background-color: #007efe;
 }

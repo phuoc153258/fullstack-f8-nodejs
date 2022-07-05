@@ -1,6 +1,6 @@
 <div class="nav">
     <div class="nav-logo">
-        <a href="#">
+        <a href="">
             <img class="nav-logo-img"
                 src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="">
         </a>
@@ -9,7 +9,7 @@
     <div class="d-inline-block w-400px">
         <div class="nav-body">
             <div class="nav-body-search">
-                <a href="#"><i class="falog-solid fa-magnifying-glass nav-body-icon"></i></a>
+                <a href="#" style="color: rgb(125,125,125);"><i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
             <input type="text" class="nav-body-input" placeholder="Tìm kiếm khoá học, bài viết, video,...">
         </div>
@@ -37,18 +37,18 @@
                 </li>
                 <hr>
                 <li class="nav-list-item">
-                    <a href="#">Trang cá nhân</a>
+                    <a href="#">Viết blog</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="#">Trang cá nhân</a>
-                </li>
-                <hr>
-                <li class="nav-list-item">
-                    <a href="#">Trang cá nhân</a>
+                    <a href="#">Bài viết của tôi</a>
                 </li>
                 <hr>
                 <li class="nav-list-item">
-                    <a href="#">Trang cá nhân</a>
+                    <a href="#">Bài viết đã lưu</a>
+                </li>
+                <hr>
+                <li class="nav-list-item">
+                    <a href="#">Cài đặt</a>
                 </li>
                 <li class="nav-list-item">
                     <a href="#" onclick="logOut()">Đăng xuất</a>
@@ -56,7 +56,7 @@
             </ul>
         </div>
         {{else}}
-        <a href="./login" class="nav-action-loginBtn">Đăng nhập</a>
+        <a href="./auth/login" class="nav-action-loginBtn">Đăng nhập</a>
         {{/if}}
     </div>
 </div>

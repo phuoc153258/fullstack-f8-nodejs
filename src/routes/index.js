@@ -1,13 +1,15 @@
 const courseRouter = require('./courses');
 const siteRouter = require('./site');
 const authRouter = require('./auth');
-const learningRouter = require('./learning')
-const authMiddleware = require('../middlewares/auth.middleware');
+const learningRouter = require('./learning');
 
 function route(app) {
     // app.use('/courses', authMiddleware ,courseRouter)
-    app.use('/login', authRouter)
-    // app.use('/learning', authMiddleware ,learningRouter)  
-    app.use('/', authMiddleware.isAuthenticateHomePage, siteRouter);
+    
+    // app.use('/learning', authMiddleware ,learningRouter)
+
+    app.use('/auth', authRouter);
+
+    app.use('/', siteRouter);
 }
 module.exports = route;

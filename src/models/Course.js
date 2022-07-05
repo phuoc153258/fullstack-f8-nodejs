@@ -23,7 +23,7 @@ const Course = new Schema({
             ],
         },
     ],
-    slug: {type:String,required:true}
+    slug: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Course', Course);

@@ -1,14 +1,17 @@
-const { mutipleMongooseToObject, mongooseToObject } = require("../util/mongoose");
-const siteService = require("../service/site.service");
+const {
+    mutipleMongooseToObject,
+    mongooseToObject,
+} = require('../helper/mongoose');
+const siteService = require('../service/site.service');
 
 const home = async (req, res) => {
     try {
-        const { userId } = req
+        const { userId } = req;
         const data = await siteService.homeService(userId);
         res.render('home', {
             layout: 'mainHome.hbs',
             courses: mutipleMongooseToObject(data.courses),
-            user:  mongooseToObject(data.user)
+            user: mongooseToObject(data.user),
         });
     } catch (error) {
         res.json(error);
@@ -16,5 +19,5 @@ const home = async (req, res) => {
 };
 
 module.exports = {
-    home
+    home,
 };

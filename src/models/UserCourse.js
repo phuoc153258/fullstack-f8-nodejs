@@ -7,11 +7,13 @@ const UserCourse = new Schema({
         {
             id: String,
             idCourse: String,
-            indexVideo: {type: Number, default: 0},
-            lessonCompleted: [{
-                idLesson: String,
-                idChapter: String
-            }],
+            indexVideo: { type: Number, default: 0 },
+            lessonCompleted: [
+                {
+                    idLesson: String,
+                    idChapter: String,
+                },
+            ],
         },
     ],
 });

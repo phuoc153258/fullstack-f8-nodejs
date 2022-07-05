@@ -11,7 +11,9 @@ for (let index = 0; index < trackItems.length; ++index) {
             document.getElementById('icon' + index).classList.add('rotate180');
         } else {
             document.getElementById('item' + index).classList.add('d-none');
-            document.getElementById('icon' + index).classList.remove('rotate180');
+            document
+                .getElementById('icon' + index)
+                .classList.remove('rotate180');
         }
     });
 }
