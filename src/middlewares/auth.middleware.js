@@ -16,8 +16,6 @@ const registerUserCondition = () => {
         ...loginUserCondition(),
         body('fullName')
             .isString().notEmpty().withMessage('Full name must be string and not empty !!!'),
-        body('rePassword')
-            .isString().notEmpty().withMessage('Password must be string and not empty !!!')
     ]
 }
 
@@ -33,11 +31,15 @@ const isAuthenticate = async (req, res, next) => {
 };
 
 const isAuthenticateHomePage = async (req, res, next) => {
+    console.log("EWQ")
     try {
         const { token } = req.cookies;
+        console.log("DSA")
         const decoded = await jwt.verify(token, keyJWT);
         req.userId = decoded.userId;
-    } catch (error) {}
+    } catch (error) {
+        console.log(error)
+    }
     next();
 };
 

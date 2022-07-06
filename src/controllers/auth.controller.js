@@ -18,6 +18,7 @@ const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         let result = await authService.loginService(email, password);
+        console.log(result)
         res.json(result);
     } catch (error) {
         res.json(error);
@@ -26,8 +27,7 @@ const login = async (req, res) => {
 
 const register = async (req,res) => {
     try {
-        const { fullName, email, password, rePassword } = req.body
-        if(!password === rePassword) return res.json('Invalid Infomation')
+        const { fullName, email, password} = req.body
         let result = await authService.registerService(fullName, email, password)
         console.log(result)
         res.json(result)

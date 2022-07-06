@@ -1,44 +1,45 @@
-const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const { keyJWT } = require('../helper/key');
+const bcrypt = require('bcrypt');
+const User = require('../models/User');
+const UserCourse = require('../models/UserCourse')
+const { ACCESS_TOKEN_SECRET_KEY, ACCESS_TOKEN_LIFE, ROLE_LEARNER, SALT_ROUNDS } = require('../variables/auth')
+const { INVALID_INFORMATION } = require('../variables/error')
 
 const loginService = async (email, password) => {
 
-        const user = await User.findOne({
-            email: email,
-            password: password,
-        });
-        if (!user) return {
-            message: 'Login failed'
-        }
-        return {
-            token: await jwt.sign({ userId: user._id }, keyJWT, {
-                expiresIn: '1h',
-            }),
-            message: 'Login success'
-        }
+    const user = await User.findOne({
+        email: email,
+    });
+    if (!user || !await bcrypt.compare(password, user.password)) return INVALID_INFORMATION
+    return {
+        token: await jwt.sign({ userId: user._id }, ACCESS_TOKEN_SECRET_KEY, {
+            expiresIn: ACCESS_TOKEN_LIFE,
+        }),
+        message: 'Login success !!!'
+    }
 };
 
 const registerService = async (fullName, email, password) => {
-    let isExitsUser = await User.findOne({email: email}).exec()
-    console.log(isExitsUser)
-    if(isExitsUser) return 'Invalid information'
-    const user = new User({
-        fullName: fullName,
-        email: email,
-        password: password,
-        username: 'dsadas',
-        bio: 'dsadsa',
-        avatar: 'dsadsa',
-        phoneNumber: 123,
-        facebook: 'dsadsa',
-        role: 1
-    });
-    // user.save({})
-    //     .then((user) => {
-    //         res.redirect(back)
-    //     })
-    return  "user"
+    try {
+        let isExitsUser = await User.findOne({ email: email }).exec()
+        if (isExitsUser) return INVALID_INFORMATION
+        const user = new User({
+            fullName: fullName,
+            email: email,
+            password: await bcrypt.hash(password, SALT_ROUNDS),
+            role: ROLE_LEARNER
+        })
+        const data = await user.save({})
+        await new UserCourse({idUser: data._id}).save()
+        return {
+            token: await jwt.sign({ userId: data._id }, ACCESS_TOKEN_SECRET_KEY, {
+                expiresIn: ACCESS_TOKEN_LIFE,
+            }),
+            message: 'Register success !!!'
+        }
+    } catch (error) {
+        return INVALID_INFORMATION
+    }
 }
 
 module.exports = {

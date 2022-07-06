@@ -37,30 +37,28 @@
                 </div>
                 <div class="login-body">
                     <div class="login-form-body">
-                        <form action="./register/handler" method="POST">
                             <div class="login-form-labelGroup">
                                 <label class="login-form-labelGroup-left">Tên của bạn</label>
                             </div>
                             <div class="login-form-input">
-                                <input type="text" placeholder="Họ và tên của bạn" name="fullName">
+                                <input type="text" placeholder="Họ và tên của bạn" id="fullName-register">
                             </div>
                             <div class="login-form-labelGroup">
                                 <label class="login-form-labelGroup-left">Email</label>
                                 <label class="login-form-labelGroup-right">Đăng nhập với SĐT</label>
                             </div>
                             <div class="login-form-input">
-                                <input type="email" placeholder="Địa chỉ email" name="email">
+                                <input type="email" placeholder="Địa chỉ email" id="email-register">
                             </div>
                             <div class="login-form-input">
-                                <input type="password" placeholder="Mật khẩu" name="password">
+                                <input type="password" placeholder="Mật khẩu" id="password-register">
                             </div>
                             <p class="login-form-desc">Gợi ý: Mật khẩu cần có ít nhất 8 kí tự</p>
                             <div class="login-form-confirm">
-                                <input class="login-form-confirm-input" type="password" placeholder="Nhập mã xác nhận" name="rePassword">
+                                <input class="login-form-confirm-input" type="password" placeholder="Nhập mã xác nhận" id="rePassword-register">
                                 <button class="login-form-confirm-btn">Gửi mã</button>
                             </div>
-                            <button class="login-btn">Đăng ký</button>
-                        </form>
+                            <button class="login-btn" onclick="registerUser()" >Đăng ký</button>
                     </div>
                     <div class="login-dontHaveAcc">Bạn đã có tài khoản? <a href="#" id="signIn">Đăng Nhập</a></div>
                 </div>

@@ -33,7 +33,7 @@ function login() {
         },
     })
         .then((data) => {
-            if (data.message === 'Login success') {
+            if (data.message === 'Login success !!!') {
                 setCookie('token', data.token, 1);
                 window.location = 'http://localhost:3000/';
             } else {
@@ -47,4 +47,46 @@ function login() {
                 '*Tài khoản hoặc mật khẩu chưa chính xác !!!',
             );
         });
+}
+function registerUser() {
+    let password = $('#password-register').val()
+    let rePassword = $('#rePassword-register').val()
+    if(password != '' && rePassword != '' && (password == rePassword)){
+        $.ajax({
+            url: 'http://localhost:3000/auth/register/handler',
+            type: 'POST',
+            data: {
+                fullName: $('#fullName-register').val(),
+                email: $('#email-register').val(),
+                password: $('#password-register').val(),
+            },
+        })
+        .then(data => {
+            if(data.message === 'Register success !!!'){
+                setCookie('token', data.token, 1);
+                window.location = 'http://localhost:3000/';
+            }
+            else {
+                swal({
+                    title: "Thông tin chưa hợp lệ !!!",
+                    icon: "error",
+                    button: "Đồng ý",
+                });
+            }
+        })
+        .catch(err => {
+            swal({
+                title: "Thông tin chưa hợp lệ !!!",
+                icon: "error",
+                button: "Đồng ý",
+            });
+        })
+    }
+    else {
+        swal({
+            title: "Thông tin chưa hợp lệ !!!",
+            icon: "error",
+            button: "Đồng ý",
+        });
+    }
 }
