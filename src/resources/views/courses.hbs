@@ -8,7 +8,7 @@
                 <li><a href="#" class="slider-item"><i class="fa-solid fa-house"></i><span>Home</span></i></a></li>
                 <li><a href="#" class="slider-item"><i class="fa-solid fa-road"></i><span>Lộ trình</span></i></a>
                 </li>
-                <li><a href="#" class="slider-item"><i class="fa-solid fa-lightbulb"></i><span>Học</span></i></a>
+                <li><a href="#" class="slider-item home-active"><i class="fa-solid fa-lightbulb"></i><span>Học</span></i></a>
                 </li>
                 <li><a href="#" class="slider-item"><i class="fa-solid fa-newspaper"></i><span>Blog</span></i></a>
                 </li>
@@ -95,8 +95,8 @@
                             <p>Xem giới thiệu khoá học</p>
                         </div>
                     </div>
-                    <h6>Đã đăng ký</h6>
-                    <button class="courses-btn" onclick="goLearn('{{course.slug}}')">Tiếp tục học</button>
+                    <h6>{{#if (isRegisterCourse userCourse.detailCourses course._id )}}Đã đăng ký{{else}}Miễn phí{{/if}}</h6>
+                    <button class="courses-btn" onclick="goLearn('{{course.slug}}')">{{#if (isRegisterCourse userCourse.detailCourses course._id )}}Tiếp tục học{{else}}Đăng ký học{{/if}} </button>
                     <ul class="courses-preview-list">
                         <li class="courses-preview-item"><i class="fa fa-tachometer"></i><span>{{course.level}}</span>
                         </li>

@@ -7,7 +7,7 @@ function delete_cookie(name) {
 }
 function logOut() {
     delete_cookie('token');
-    location.reload();
+    window.location = 'http://localhost:3000/';
 }
 function showUserMenu() {
     if (userImg.classList.contains('hide')) {

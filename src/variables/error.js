@@ -1,4 +1,3 @@
-
 module.exports = {
-    INVALID_INFORMATION: { message: 'Invalid Information !!!' }
-}
+    INVALID_INFORMATION: { message: 'Invalid Information !!!' },
+};

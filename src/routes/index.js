@@ -4,9 +4,9 @@ const authRouter = require('./auth');
 const learningRouter = require('./learning');
 
 function route(app) {
-    // app.use('/courses', authMiddleware ,courseRouter)
-    
-    // app.use('/learning', authMiddleware ,learningRouter)
+    app.use('/courses', courseRouter);
+
+    app.use('/learning', learningRouter);
 
     app.use('/auth', authRouter);
 

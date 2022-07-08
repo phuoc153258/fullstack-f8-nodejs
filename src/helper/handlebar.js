@@ -241,4 +241,11 @@ module.exports = {
         }
         return 0;
     },
+    isRegisterCourse(detailCourses, idCourse) {
+        const isExist = detailCourses.find(
+            (course) => course.idCourse == idCourse,
+        );
+        if (!isExist) return false;
+        return true;
+    },
 };

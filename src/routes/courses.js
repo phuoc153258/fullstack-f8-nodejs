@@ -1,8 +1,16 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+const courseMiddleware = require('../middlewares/course.middleware');
+const baseMiddleware = require('../middlewares/base.middleware');
+const authMiddleware = require('../middlewares/auth.middleware');
+const courseController = require('../controllers/course.controller');
 
-// const courseController = require('../controllers/CourseController');
+router.get(
+    '/:slug',
+    authMiddleware.isAuthenticate,
+    courseMiddleware.showDetailsCourseCondition(),
+    baseMiddleware.runConditionMiddleware,
+    courseController.show,
+);
 
-// router.get('/:slug', courseController.show);
-
-// module.exports = router;
+module.exports = router;

@@ -9,7 +9,7 @@ const {
     SALT_ROUNDS,
     ROLE_LEARNER,
     ROLE_MEMBER,
-    ROLE_ADMIN
+    ROLE_ADMIN,
 } = process.env;
 
 module.exports = {
@@ -20,5 +20,5 @@ module.exports = {
     SALT_ROUNDS: parseInt(SALT_ROUNDS),
     ROLE_LEARNER: ROLE_LEARNER,
     ROLE_MEMBER: ROLE_MEMBER,
-    ROLE_ADMIN: ROLE_ADMIN
+    ROLE_ADMIN: ROLE_ADMIN,
 };

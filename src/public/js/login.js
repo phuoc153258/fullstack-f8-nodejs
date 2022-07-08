@@ -49,9 +49,9 @@ function login() {
         });
 }
 function registerUser() {
-    let password = $('#password-register').val()
-    let rePassword = $('#rePassword-register').val()
-    if(password != '' && rePassword != '' && (password == rePassword)){
+    let password = $('#password-register').val();
+    let rePassword = $('#rePassword-register').val();
+    if (password != '' && rePassword != '' && password == rePassword) {
         $.ajax({
             url: 'http://localhost:3000/auth/register/handler',
             type: 'POST',
@@ -61,32 +61,30 @@ function registerUser() {
                 password: $('#password-register').val(),
             },
         })
-        .then(data => {
-            if(data.message === 'Register success !!!'){
-                setCookie('token', data.token, 1);
-                window.location = 'http://localhost:3000/';
-            }
-            else {
+            .then((data) => {
+                if (data.message === 'Register success !!!') {
+                    setCookie('token', data.token, 1);
+                    window.location = 'http://localhost:3000/';
+                } else {
+                    swal({
+                        title: 'Thông tin chưa hợp lệ !!!',
+                        icon: 'error',
+                        button: 'Đồng ý',
+                    });
+                }
+            })
+            .catch((err) => {
                 swal({
-                    title: "Thông tin chưa hợp lệ !!!",
-                    icon: "error",
-                    button: "Đồng ý",
+                    title: 'Thông tin chưa hợp lệ !!!',
+                    icon: 'error',
+                    button: 'Đồng ý',
                 });
-            }
-        })
-        .catch(err => {
-            swal({
-                title: "Thông tin chưa hợp lệ !!!",
-                icon: "error",
-                button: "Đồng ý",
             });
-        })
-    }
-    else {
+    } else {
         swal({
-            title: "Thông tin chưa hợp lệ !!!",
-            icon: "error",
-            button: "Đồng ý",
+            title: 'Thông tin chưa hợp lệ !!!',
+            icon: 'error',
+            button: 'Đồng ý',
         });
     }
 }
