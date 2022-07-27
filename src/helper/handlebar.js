@@ -1,8 +1,16 @@
 function addLeadingZeros(num, totalLength) {
     return String(num).padStart(totalLength, '0');
 }
+function getTotalLengthLesson(courses) {
+    let countLesson = 0;
+    for (let index = 0; index < courses.length; ++index) {
+        countLesson += courses[index].lesson.length;
+    }
+    return countLesson;
+}
 
 module.exports = {
+    getTotalLengthLesson,
     sum(a, b) {
         return a + b;
     },
@@ -30,13 +38,6 @@ module.exports = {
     },
     getLengthChapterLesson(course) {
         return course.length;
-    },
-    getTotalLengthLesson(courses) {
-        let countLesson = 0;
-        for (let index = 0; index < courses.length; ++index) {
-            countLesson += courses[index].lesson.length;
-        }
-        return countLesson;
     },
     numberToTime(num) {
         let seconds = num % 60;
@@ -247,5 +248,26 @@ module.exports = {
         );
         if (!isExist) return false;
         return true;
+    },
+    handlePreButton(idCourse, user) {
+        let course = user.detailCourses.find((x) => x.idCourse == idCourse);
+        if (course.indexVideo > 0)
+            return `class="actionBar-btn-next" onclick="updateIdxVideo(${
+                course.indexVideo - 1
+            }, '${idCourse}')" `;
+        else return 'class="actionBar-btn-pre cursor-progress" disabled';
+    },
+    handleNextButton(course, user) {
+        let courseUser = user.detailCourses.find(
+            (x) => x.idCourse == course._id,
+        );
+        if (
+            courseUser.indexVideo <
+            getTotalLengthLesson(course.courseContent) - 1
+        )
+            return `class="actionBar-btn-next" onclick="updateIdxVideo(${
+                courseUser.indexVideo + 1
+            }, '${course._id}')"`;
+        else return 'class="actionBar-btn-pre cursor-progress" disabled';
     },
 };

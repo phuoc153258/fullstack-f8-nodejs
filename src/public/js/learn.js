@@ -30,6 +30,5 @@ for (let index = 0; index < stopForm.length; index++) {
 function updateIdxVideo(num, idCourse) {
     inputFormIndexVideo.value = num;
     inputFormIdCourseIndexVideo.value = idCourse;
-
     formHandleIndexVideo.submit();
 }

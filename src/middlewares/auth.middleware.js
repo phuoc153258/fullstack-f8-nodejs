@@ -1,32 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { ACCESS_TOKEN_SECRET_KEY } = require('../variables/auth');
-const { body } = require('express-validator');
-
-const loginUserCondition = () => {
-    return [
-        body('email')
-            .isString()
-            .notEmpty()
-            .isEmail()
-            .withMessage(
-                'Email must be string, not empty and correct format !!!',
-            ),
-        body('password')
-            .isString()
-            .notEmpty()
-            .withMessage('Password must be string and not empty !!!'),
-    ];
-};
-
-const registerUserCondition = () => {
-    return [
-        ...loginUserCondition(),
-        body('fullName')
-            .isString()
-            .notEmpty()
-            .withMessage('Full name must be string and not empty !!!'),
-    ];
-};
+const { ACCESS_TOKEN_SECRET_KEY } = require('../config/env/index');
 
 const isAuthenticate = async (req, res, next) => {
     try {
@@ -61,7 +34,5 @@ const isAuthenticateLoginPage = async (req, res, next) => {
 module.exports = {
     isAuthenticate,
     isAuthenticateHomePage,
-    loginUserCondition,
-    registerUserCondition,
     isAuthenticateLoginPage,
 };

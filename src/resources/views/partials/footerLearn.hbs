@@ -1,8 +1,9 @@
 <div class="actionBar">
-    <button class="actionBar-btn-pre"><i class="fa-solid fa-angle-left"></i> Bài Trước</button>
-    <button class="actionBar-btn-next">Bài Tiếp Theo <i class="fa-solid fa-angle-right"></i></button>
+    <button {{{handlePreButton course._id user }}}><i class="fa-solid fa-angle-left"></i> Bài Trước</button>
+    <button {{{handleNextButton course user}}} class="actionBar-btn-pre">Bài Tiếp Theo <i class="fa-solid fa-angle-right"></i></button>
     <div class="actionBar-toggleWrap">
         <h3 class="actionBar-toggleWrap-title">1. Khái niệm kỹ thuật cần biết</h3>
         <button class="actionBar-toggleWrap-btn"><i class="fa-solid fa-right-long"></i></button>
     </div>
 </div>
+{{!-- {{{getTotalLengthLesson course.courseContent}}} --}}

@@ -14,7 +14,12 @@ const User = new Schema(
         },
         phoneNumber: { type: Number, default: 0 },
         facebook: { type: String, default: '' },
-        slug: { type: String, slug: 'fullName', unique: true },
+        slug: {
+            type: String,
+            slug: 'fullName',
+            slug_padding_size: 4,
+            unique: true,
+        },
         role: { type: String, required: true },
     },
     {

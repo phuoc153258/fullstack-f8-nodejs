@@ -20,15 +20,15 @@
         <a href="#"><i class="fa-solid fa-bell nav-action-nofi"></i></a>
         <div class="p-realative">
             <a href="#" onclick="showUserMenu()"><img
-                    src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                    src="{{user.avatar}}"
                     class="nav-action-avatar hide" alt="" id="user-img"></a>
             <ul class="nav-list d-none" id="user-menu">
-                <li class="nav-list-item d-flex space-between align-center ">
-                    <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                <li class="nav-list-item gap0-15px d-flex align-center ">
+                    <img src="{{user.avatar}}"
                         class="nav-list-img" alt="">
                     <div class="nav-list-userInfo">
-                        <h3 class="nav-list-name">Nguyễn Đôn Phước</h3>
-                        <p class="nav-list-username">@nguyendonphuoc</p>
+                        <h3 class="nav-list-name">{{user.fullName}}</h3>
+                        <p class="nav-list-username">@{{user.slug}}</p>
                     </div>
                 </li>
                 <hr>

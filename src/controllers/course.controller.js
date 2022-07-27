@@ -3,7 +3,7 @@ const {
     mutipleMongooseToObject,
     mongooseToObject,
 } = require('../helper/mongoose');
-const { INVALID_INFORMATION } = require('../variables/error');
+const { INVALID_INFORMATION } = require('../base/error');
 
 const show = async (req, res) => {
     const { slug } = req.params;

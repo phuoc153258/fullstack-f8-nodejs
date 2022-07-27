@@ -33,7 +33,22 @@ const handleLessonService = async (lessonCompeletedObj, idCourse, userId) => {
     );
 };
 
+const switchLessonService = async (idCourse, indexVideo, userId) => {
+    await UserCourse.updateOne(
+        {
+            idUser: userId,
+            'detailCourses.idCourse': idCourse,
+        },
+        {
+            $set: {
+                'detailCourses.$.indexVideo': indexVideo,
+            },
+        },
+    );
+};
+
 module.exports = {
     getCourseLearningService,
     handleLessonService,
+    switchLessonService,
 };

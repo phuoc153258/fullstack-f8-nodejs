@@ -7,8 +7,8 @@ const {
     ACCESS_TOKEN_LIFE,
     ROLE_LEARNER,
     SALT_ROUNDS,
-} = require('../variables/auth');
-const { INVALID_INFORMATION } = require('../variables/error');
+} = require('../config/env/index');
+const { INVALID_INFORMATION } = require('../base/error');
 
 const loginService = async (email, password) => {
     const user = await User.findOne({
