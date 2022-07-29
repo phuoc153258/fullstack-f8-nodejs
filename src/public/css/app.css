@@ -1047,7 +1047,7 @@ html ::-webkit-scrollbar-track {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 15px 28px;
   position: fixed;
   top: 0;
   right: 0;
@@ -1085,3 +1085,92 @@ html ::-webkit-scrollbar-track {
 
 .bodyProfile-container {
   padding: 0px 90px; }
+
+.bodyProfile-user {
+  padding-top: 28%;
+  width: 100%;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  position: relative; }
+  .bodyProfile-user-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    bottom: -70px;
+    left: 40px; }
+  .bodyProfile-user-avatar {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 168px;
+    padding: 4px;
+    width: 168px; }
+    .bodyProfile-user-avatar img {
+      border-radius: 50%;
+      height: 100%;
+      object-fit: cover;
+      width: 100%; }
+  .bodyProfile-user-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    text-align: center; }
+
+.bodyProfile-content-container {
+  margin: 100px 110px 0px 110px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px; }
+
+.bodyProfile-content-wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 18px 14px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.bodyProfile-content-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px; }
+
+.bodyProfile-content-desc {
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 15px; }
+  .bodyProfile-content-desc i {
+    color: #808990;
+    margin-right: 10px; }
+  .bodyProfile-content-desc a {
+    font-weight: 600;
+    color: #000; }
+
+.bodyProfile-content-course {
+  align-items: flex-start;
+  border-bottom: 1px solid #d0d7de;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 12px; }
+  .bodyProfile-content-course-banner {
+    width: 40%;
+    margin-right: 20px; }
+    .bodyProfile-content-course-banner img {
+      border-radius: 16px;
+      height: 100%;
+      object-fit: cover;
+      width: 100%; }
+  .bodyProfile-content-course-info {
+    width: 60%; }
+  .bodyProfile-content-course-title {
+    color: #333;
+    font-size: 16px; }
+  .bodyProfile-content-course-desc {
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 4px;
+    overflow: hidden; }

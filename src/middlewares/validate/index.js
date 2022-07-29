@@ -1,9 +1,13 @@
-const authValidate = require('./auth');
-const courseValidate = require('./course');
-const learnValidate = require('./learn');
+const { validateLoginInfo, validateRegisterInfo, } = require('./auth');
+const { validateSlugCourse } = require('./course');
+const { validatelessonComplete, validateswitchLesson} = require('./learn');
+const { validateSlug } = require('./profile')
 
 module.exports = {
-    authValidate,
-    courseValidate,
-    learnValidate,
+    validateLoginInfo,
+    validateRegisterInfo,
+    validateSlugCourse,
+    validatelessonComplete,
+    validateswitchLesson,
+    validateSlug,
 };

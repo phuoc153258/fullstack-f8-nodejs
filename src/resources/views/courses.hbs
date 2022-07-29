@@ -65,7 +65,7 @@
                                 {{#each course.courseContent}}
                                     <div class="courses-content-heading">
                                         <span class="courses-content-groupName">
-                                            <strong>1. {{this.name}}</strong>
+                                            <strong>{{{sum @index 1}}}. {{this.name}}</strong>
                                         </span>
                                         <span class="courses-content-countLesson">
                                             {{{getLengthObject this.lesson}}} bài học
@@ -76,7 +76,7 @@
                                                 <div class="courses-content-details-lesson">
                                                     <div>
                                                         <i class="fa-solid fa-circle-play"></i>
-                                                        <span class="pl-5px">1. {{this.name}}</span>
+                                                        <span class="pl-5px">{{{sum @index 1}}}. {{this.name}}</span>
                                                     </div>
                                                     <span class="text-right">{{{numberToTime this.videoLength}}}</span>
                                                 </div>

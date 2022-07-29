@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/auth.middleware');
-const { learnValidate } = require('../middlewares/validate/index');
+const { validatelessonComplete, validateswitchLesson } = require('../middlewares/validate/index');
 const baseMiddleware = require('../middlewares/base.middleware');
 const learningController = require('../controllers/learn.controller');
 
 router.put(
     '/handle/lesson-completed',
     authMiddleware.isAuthenticate,
-    learnValidate.validatelessonComplete(),
+    validatelessonComplete(),
     baseMiddleware.runConditionMiddleware,
     learningController.handleLessonCompleted,
 );
@@ -16,7 +16,7 @@ router.put(
 router.put(
     '/handle/index-video',
     authMiddleware.isAuthenticate,
-    learnValidate.validateswitchLesson(),
+    validateswitchLesson(),
     baseMiddleware.runConditionMiddleware,
     learningController.handleIndexVideo,
 );
