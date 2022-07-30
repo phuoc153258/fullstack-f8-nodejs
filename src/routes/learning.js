@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/auth.middleware');
-const { validatelessonComplete, validateswitchLesson } = require('../middlewares/validate/index');
+const {
+    validatelessonComplete,
+    validateswitchLesson,
+} = require('../middlewares/validate/index');
 const baseMiddleware = require('../middlewares/base.middleware');
 const learningController = require('../controllers/learn.controller');
 

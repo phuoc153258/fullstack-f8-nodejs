@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/auth.middleware');
 const baseMiddleware = require('../middlewares/base.middleware');
-const { validateLoginInfo, validateRegisterInfo } = require('../middlewares/validate/index');
+const {
+    validateLoginInfo,
+    validateRegisterInfo,
+} = require('../middlewares/validate/index');
 const authController = require('../controllers/auth.controller');
 
 router.post(

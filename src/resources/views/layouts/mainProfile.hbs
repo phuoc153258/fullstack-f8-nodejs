@@ -16,94 +16,17 @@
 </head>
 
 <body>
-    <div class="navProfile">
-        <div class="navProfile-logo">
-            <a href="/">
-                <img src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="">
-            </a>
-            <a href="/">
-                <h4 class="navProfile-heading">
-                    <i class="fa-solid fa-angle-left"></i>
-                    Quay lại
-                </h4>
-            </a>
-        </div>
-        <div class="navProfile-actions">
-            <div class="navProfile-actions-noti">
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
-                class="navProfile-actions-user" alt="">
-        </div>
-    </div>
 
-    <div class="bodyProfile">
-        <div class="bodyProfile-container">
-            <div class="bodyProfile-banner">
-                <div class="bodyProfile-user"
-                    style="background-image: url('https://static.fullstack.edu.vn/static/media/cover-profile.3fb9fed576da4b28386a.png');">
-                    <div class="bodyProfile-user-wrapper">
-                        <div class="bodyProfile-user-avatar">
-                            <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
-                                alt="">
-                        </div>
-                        <div class="bodyProfile-user-name"><span>Nguyen Don Phuoc</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bodyProfile-content">
-            <div class="bodyProfile-content-container">
-                <div class="bodyProfile-content-left" style="width: 40%;">
-                    <div class="bodyProfile-content-wrapper">
-                        <div class="bodyProfile-content-heading">
-                            Giới thiệu
-                        </div>
-                        <div class="bodyProfile-content-desc"><i class="fa-solid fa-user-group"></i><span>Thành viên của
-                                <a href="/">F8 - Học lập trình để đi làm</a> từ 7 tháng trước</span></div>
-                    </div>
-                    <div class="bodyProfile-content-wrapper">
-                        <div class="bodyProfile-content-heading">
-                            Giới thiệu
-                        </div>
-                        <div class="bodyProfile-content-desc"></i><span>Chưa có hoạt động gần đây</span></div>
-                    </div>
-                </div>
-                <div class="bodyProfile-content_right" style="width: 58%;">
-                    <div class="bodyProfile-content-wrapper">
-                        <div class="bodyProfile-content-heading">
-                            Các khóa học đã tham gia
-                        </div>
-                        <div class="bodyProfile-content-course">
-                            <div class="bodyProfile-content-course-banner">
-                                <img src="https://files.fullstack.edu.vn/f8-prod/courses/3.png" alt="">
-                            </div>
-                            <div class="bodyProfile-content-course-info">
-                                <h3 class="bodyProfile-content-course-title">
-                                    Responsive Với Grid System
-                                </h3>
-                                <p class="bodyProfile-content-course-desc">
-                                    Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.
-                                </p> 
-                            </div>
-                        </div>
-                        <div class="bodyProfile-content-course">
-                            <div class="bodyProfile-content-course-banner">
-                                <img src="https://files.fullstack.edu.vn/f8-prod/courses/3.png" alt="">
-                            </div>
-                            <div class="bodyProfile-content-course-info">
-                                <h3 class="bodyProfile-content-course-title">
-                                    Responsive Với Grid System
-                                </h3>
-                                <p class="bodyProfile-content-course-desc">
-Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.                                </p> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{>headerProfile}}
+    {{{body}}}
+    {{>footerProfile}}
+
+    <script src="/js/home.js"></script>
+    <script>
+        function submitCourses(slug) {
+            document.getElementById('form-submit-course-'+slug).submit()
+        }
+    </script>
 
 </body>
 

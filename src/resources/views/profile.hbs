@@ -1,0 +1,59 @@
+<div class="bodyProfile">
+    <div class="bodyProfile-container">
+        <div class="bodyProfile-banner">
+            <div class="bodyProfile-user"
+                style="background-image: url('https://static.fullstack.edu.vn/static/media/cover-profile.3fb9fed576da4b28386a.png');">
+                <div class="bodyProfile-user-wrapper">
+                    <div class="bodyProfile-user-avatar">
+                        <img src="{{user.avatar}}" alt="">
+                    </div>
+                    <div class="bodyProfile-user-name"><span>{{user.fullName}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodyProfile-content">
+        <div class="bodyProfile-content-container">
+            <div class="bodyProfile-content-left" style="width: 40%;">
+                <div class="bodyProfile-content-wrapper">
+                    <div class="bodyProfile-content-heading">
+                        Giới thiệu
+                    </div>
+                    <div class="bodyProfile-content-desc"><i class="fa-solid fa-user-group"></i><span>Thành viên của
+                            <a href="/">F8 - Học lập trình để đi làm</a> vào {{{formatDate user.createdAt}}}</span>
+                    </div>
+                </div>
+                <div class="bodyProfile-content-wrapper">
+                    <div class="bodyProfile-content-heading">
+                        Giới thiệu
+                    </div>
+                    <div class="bodyProfile-content-desc"></i><span>Chưa có hoạt động gần đây</span></div>
+                </div>
+            </div>
+            <div class="bodyProfile-content_right" style="width: 58%;">
+                <div class="bodyProfile-content-wrapper">
+                    <div class="bodyProfile-content-heading">
+                        Các khóa học đã tham gia
+                    </div>
+                    {{#each courses}}
+                    <form action="/courses/{{this.slug}}" method="GET" id="form-submit-course-{{this.slug}}">
+                        <div class="bodyProfile-content-course" onclick="submitCourses('{{this.slug}}')">
+                            <div class="bodyProfile-content-course-banner">
+                                <img src="{{this.image}}" alt="">
+                            </div>
+                            <div class="bodyProfile-content-course-info">
+                                <h3 class="bodyProfile-content-course-title">
+                                    {{this.name}}
+                                </h3>
+                                <p class="bodyProfile-content-course-desc">
+                                    {{this.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

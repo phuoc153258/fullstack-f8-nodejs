@@ -152,7 +152,13 @@ function getTotalTimeLengthChapter(chapter) {
     return `${addLeadingZeros(minutes, 2)}:${addLeadingZeros(seconds, 2)}`;
 }
 
-function checkLessonCompleted(idLesson, userCourses, idCourse, idChapter, idUser) {
+function checkLessonCompleted(
+    idLesson,
+    userCourses,
+    idCourse,
+    idChapter,
+    idUser,
+) {
     let isCompleted = false;
     for (let index = 0; index < userCourses.length; index++) {
         if (userCourses[index].idCourse == idCourse) {
@@ -162,8 +168,7 @@ function checkLessonCompleted(idLesson, userCourses, idCourse, idChapter, idUser
                 i++
             ) {
                 if (
-                    userCourses[index].lessonCompleted[i].idLesson ==
-                    idLesson
+                    userCourses[index].lessonCompleted[i].idLesson == idLesson
                 ) {
                     isCompleted = true;
                 }
@@ -225,8 +230,7 @@ function renderDescribeLesson(user, course) {
                     j++
                 ) {
                     if (idx == user.detailCourses[index].indexVideo) {
-                        return course.courseContent[i].lesson[j]
-                            .describeLesson;
+                        return course.courseContent[i].lesson[j].describeLesson;
                     } else idx++;
                 }
             }
@@ -259,9 +263,7 @@ function renderIdxVideoList(idVideo, courseContent) {
 }
 
 function isRegisterCourse(detailCourses, idCourse) {
-    const isExist = detailCourses.find(
-        (course) => course.idCourse == idCourse,
-    );
+    const isExist = detailCourses.find((course) => course.idCourse == idCourse);
     if (!isExist) return false;
     return true;
 }
@@ -269,33 +271,34 @@ function isRegisterCourse(detailCourses, idCourse) {
 function handlePreButton(idCourse, user) {
     let course = user.detailCourses.find((x) => x.idCourse == idCourse);
     if (course.indexVideo > 0)
-        return `class="actionBar-btn-next" onclick="updateIdxVideo(${course.indexVideo - 1
-            }, '${idCourse}')" `;
+        return `class="actionBar-btn-next" onclick="updateIdxVideo(${
+            course.indexVideo - 1
+        }, '${idCourse}')" `;
     else return 'class="actionBar-btn-pre cursor-progress" disabled';
 }
 
 function handleNextButton(course, user) {
-    let courseUser = user.detailCourses.find(
-        (x) => x.idCourse == course._id,
-    );
-    if (
-        courseUser.indexVideo <
-        getTotalLengthLesson(course.courseContent) - 1
-    )
-        return `class="actionBar-btn-next" onclick="updateIdxVideo(${courseUser.indexVideo + 1
-            }, '${course._id}')"`;
+    let courseUser = user.detailCourses.find((x) => x.idCourse == course._id);
+    if (courseUser.indexVideo < getTotalLengthLesson(course.courseContent) - 1)
+        return `class="actionBar-btn-next" onclick="updateIdxVideo(${
+            courseUser.indexVideo + 1
+        }, '${course._id}')"`;
     else return 'class="actionBar-btn-pre cursor-progress" disabled';
+}
+
+function formatDate(date) {
+    return new Date(date).toLocaleDateString();
 }
 
 module.exports = {
     addLeadingZeros,
-    getTotalLengthLesson, 
-    sum, 
-    isTypeHome, 
+    getTotalLengthLesson,
+    sum,
+    isTypeHome,
     getLengthObject,
-    getLengthChapterLesson, 
-    numberToTime, 
-    timeToNumber, 
+    getLengthChapterLesson,
+    numberToTime,
+    timeToNumber,
     convertTime,
     getTotalVideoLength,
     calcLessonCouseCompleted,
@@ -311,4 +314,5 @@ module.exports = {
     isRegisterCourse,
     handlePreButton,
     handleNextButton,
+    formatDate,
 };

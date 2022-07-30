@@ -6,10 +6,12 @@ const validateSlug = () => {
             .isString()
             .notEmpty()
             .isSlug()
-            .withMessage('Slug must be string, not empty and correct format !!!')
+            .withMessage(
+                'Slug must be string, not empty and correct format !!!',
+            ),
     ];
 };
 
 module.exports = {
-    validateSlug
+    validateSlug,
 };

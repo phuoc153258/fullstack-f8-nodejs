@@ -5,14 +5,21 @@ const {
 } = require('../helper/mongoose');
 
 const show = async (req, res, next) => {
-    const { slug } = req.params;
-    const { userId } = req;
-    const result = await learnService.getCourseLearningService(slug, userId);
-    res.render('learn', {
-        layout: 'mainLearn.hbs',
-        course: mongooseToObject(result.course),
-        user: mongooseToObject(result.userCourse),
-    });
+    try {
+        const { slug } = req.params;
+        const { userId } = req;
+        const result = await learnService.getCourseLearningService(
+            slug,
+            userId,
+        );
+        res.render('learn', {
+            layout: 'mainLearn.hbs',
+            course: mongooseToObject(result.course),
+            user: mongooseToObject(result.userCourse),
+        });
+    } catch (error) {
+        res.redirect('back');
+    }
 };
 
 const handleLessonCompleted = async (req, res, next) => {
