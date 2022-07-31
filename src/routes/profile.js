@@ -15,4 +15,6 @@ router.get(
     profileController.show,
 );
 
+router.get('/settings', profileController.settings);
+
 module.exports = router;

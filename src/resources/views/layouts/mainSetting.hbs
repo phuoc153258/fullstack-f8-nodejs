@@ -8,24 +8,20 @@
     <title>F8 - học lập trình để đi làm! | Học lập trình online | Học lập trình Javascript</title>
     <link rel="icon" type="image/x-icon" href="https://fullstack.edu.vn/favicon/favicon_32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="/css/app.css">
 </head>
-
 <body>
-
+    
     {{>headerHome}}
     {{{body}}}
     {{>footerHome}}
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/js/slick.js"></script>
     <script src="/js/home.js"></script>
     {{#if user}}
     <script>
@@ -50,6 +46,34 @@
         );
     </script>
     {{/if}}
+    <script>
+        function editProfileBtn(name) {
+            document.getElementById("edit-btn-"+ name).classList.add('d-none');
+            document.getElementById("save-btn-"+ name).classList.remove('d-none');
+            document.getElementById("setting-input-"+ name).removeAttribute("readonly")
+        }
+        function cancelEditProfile(name){
+            document.getElementById("edit-btn-"+ name).classList.remove('d-none');
+            document.getElementById("save-btn-"+ name).classList.add('d-none');
+            document.getElementById("setting-input-"+ name).setAttribute("readonly","")
+        }
+    </script>
+    <script>
+        function uploadAvatarUser() {
+            document.getElementById("setting-avatar-user").click();
+        };
+        function editUploadBtn() {
+            document.getElementById("edit-btn-upload").classList.add('d-none');
+            document.getElementById("save-btn-upload").classList.remove('d-none');
+            document.getElementById("setting-upload-div").classList.add('setting-info-avatar-active')
+            document.getElementById("setting-upload-icon").classList.remove('d-none');
+        }
+        function cancelEditUpload() {
+            document.getElementById("edit-btn-upload").classList.remove('d-none');
+            document.getElementById("save-btn-upload").classList.add('d-none');    
+            document.getElementById("setting-upload-div").classList.remove('setting-info-avatar-active')
+            document.getElementById("setting-upload-icon").classList.add('d-none');
+        }
+    </script>
 </body>
-
 </html>

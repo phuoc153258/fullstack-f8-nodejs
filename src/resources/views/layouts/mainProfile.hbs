@@ -22,6 +22,29 @@
     {{>footerProfile}}
 
     <script src="/js/home.js"></script>
+        {{#if user}}
+    <script>
+        let userImg = document.querySelector('#user-img');
+        let userMenu = document.querySelector('#user-menu');
+        function showUserMenu() {
+            if (userImg.classList.contains('hide')) {
+                userImg.classList.remove('hide');
+                userMenu.classList.remove('d-none');
+            } else {
+                userImg.classList.add('hide');
+                userMenu.classList.add('d-none');
+            }
+        }
+        window.addEventListener(
+            'click',
+            function (e) {
+                userImg.classList.add('hide');
+                userMenu.classList.add('d-none');
+            },
+            true,
+        );
+    </script>
+    {{/if}}
     <script>
         function submitCourses(slug) {
             document.getElementById('form-submit-course-'+slug).submit()

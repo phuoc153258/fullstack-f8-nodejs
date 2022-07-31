@@ -20,6 +20,18 @@ const show = async (req, res, next) => {
     }
 };
 
+const settings = async (req, res, next) => {
+    try {
+        res.render('setting', {
+            layout: 'mainSetting.hbs',
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('back');
+    }
+};
+
 module.exports = {
     show,
+    settings,
 };

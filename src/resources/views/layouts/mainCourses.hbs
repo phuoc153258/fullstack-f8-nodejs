@@ -24,6 +24,29 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/js/dropdown.js"></script>
     <script src="/js/home.js"></script>
+        {{#if user}}
+    <script>
+        let userImg = document.querySelector('#user-img');
+        let userMenu = document.querySelector('#user-menu');
+        function showUserMenu() {
+            if (userImg.classList.contains('hide')) {
+                userImg.classList.remove('hide');
+                userMenu.classList.remove('d-none');
+            } else {
+                userImg.classList.add('hide');
+                userMenu.classList.add('d-none');
+            }
+        }
+        window.addEventListener(
+            'click',
+            function (e) {
+                userImg.classList.add('hide');
+                userMenu.classList.add('d-none');
+            },
+            true,
+        );
+    </script>
+    {{/if}}
     <script>
         function goLearn(slug){
             event.preventDefault()
