@@ -290,6 +290,10 @@ function formatDate(date) {
     return new Date(date).toLocaleDateString();
 }
 
+function addSlugUser(a, b) {
+    return a + b;
+}
+
 module.exports = {
     addLeadingZeros,
     getTotalLengthLesson,
@@ -315,4 +319,5 @@ module.exports = {
     handlePreButton,
     handleNextButton,
     formatDate,
+    addSlugUser,
 };

@@ -24,13 +24,23 @@ const getInfoProfileService = async (id) => {
     );
 };
 
-getInfoUserService = async (userId) => {
+const getInfoUserService = async (userId, fileds) => {
     const user = await User.findOne({ _id: userId }).exec();
     if (!user) return '';
-    return new UserDTO(user).toSimple(['_id', 'fullName', 'avatar', 'slug']);
+    return new UserDTO(user).toSimple(fileds);
+};
+
+const editInfoUserService = async (info, userId) => {
+    for (const [key, value] of info) {
+        const user = await User.updateOne(
+            { _id: userId },
+            { $set: { [key]: value } },
+        );
+    }
 };
 
 module.exports = {
     getInfoProfileService,
     getInfoUserService,
+    editInfoUserService,
 };

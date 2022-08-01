@@ -14,6 +14,21 @@ const checkSlugUser = async (req, res, next) => {
     }
 };
 
+const checkValueEditProfile = async (req, res, next) => {
+    try {
+        const { userId } = req;
+        const info = Object.entries(req.body);
+        const user = await User.findOne({ _id: userId });
+        for (const [key, value] of info)
+            if (user[key] == value) return res.redirect('back');
+        req.info = info;
+        next();
+    } catch (error) {
+        res.redirect('back');
+    }
+};
+
 module.exports = {
     checkSlugUser,
+    checkValueEditProfile,
 };

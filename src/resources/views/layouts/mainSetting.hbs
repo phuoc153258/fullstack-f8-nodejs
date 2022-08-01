@@ -74,6 +74,12 @@
             document.getElementById("setting-upload-div").classList.remove('setting-info-avatar-active')
             document.getElementById("setting-upload-icon").classList.add('d-none');
         }
+        function submitValueToEditProfile(key){
+            const value = document.getElementById('setting-input-'+key).value
+            document.getElementById("edit-profile-input").setAttribute("name",key)
+            document.getElementById("edit-profile-input").setAttribute("value",value)
+            document.getElementById("form-setting-edit-profile").submit()
+        }
     </script>
 </body>
 </html>

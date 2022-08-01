@@ -4,7 +4,7 @@ const {
 } = require('../helper/mongoose');
 const profileService = require('../service/profile.service');
 
-const show = async (req, res, next) => {
+const show = async (req, res) => {
     try {
         let { user, userId } = req;
         let courses = await profileService.getInfoProfileService(user._id);
@@ -12,21 +12,46 @@ const show = async (req, res, next) => {
             layout: 'mainProfile.hbs',
             user: user,
             courses: courses,
-            me: await profileService.getInfoUserService(userId),
+            me: await profileService.getInfoUserService(userId, [
+                '_id',
+                'fullName',
+                'avatar',
+                'slug',
+            ]),
         });
     } catch (error) {
-        console.log(error);
         res.redirect('back');
     }
 };
 
-const settings = async (req, res, next) => {
+const settings = async (req, res) => {
     try {
+        const { userId } = req;
+
         res.render('setting', {
             layout: 'mainSetting.hbs',
+            user: await profileService.getInfoUserService(userId, [
+                '_id',
+                'fullName',
+                'email',
+                'bio',
+                'avatar',
+                'phoneNumber',
+                'facebook',
+                'slug',
+            ]),
         });
     } catch (error) {
-        console.log(error);
+        res.redirect('back');
+    }
+};
+
+const editProfile = async (req, res) => {
+    try {
+        const { info, userId } = req;
+        await profileService.editInfoUserService(info, userId);
+        res.redirect('back');
+    } catch (error) {
         res.redirect('back');
     }
 };
@@ -34,4 +59,5 @@ const settings = async (req, res, next) => {
 module.exports = {
     show,
     settings,
+    editProfile,
 };

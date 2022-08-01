@@ -6,42 +6,42 @@
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">Họ tên</h3>
                 <input type="text" class="setting-info-content-input" placeholder="Thêm họ tên..." readonly
-                    id="setting-input-name">
+                    id="setting-input-fullName" value="{{user.fullName}}" >
                 <p class="setting-info-content-desc">Tên của bạn xuất hiện trên trang cá nhân và bên cạnh các bình
                     luận của bạn.</p>
             </div>
             <div class="setting-info-btn">
-                <a class="setting-info-btn-edit" onclick="editProfileBtn('name')" id="edit-btn-name">Chỉnh sửa</a>
-                <div class="setting-info-btn-wrapper d-none" id="save-btn-name">
-                    <a class="setting-info-btn-save">Lưu</a>
-                    <a class="setting-info-btn-cancel" onclick="cancelEditProfile('name')">Huỷ</a>
+                <a class="setting-info-btn-edit" onclick="editProfileBtn('fullName')" id="edit-btn-fullName">Chỉnh sửa</a>
+                <div class="setting-info-btn-wrapper d-none" id="save-btn-fullName">
+                    <a class="setting-info-btn-save" onclick="submitValueToEditProfile('fullName')">Lưu</a>
+                    <a class="setting-info-btn-cancel" onclick="cancelEditProfile('fullName')">Huỷ</a>
                 </div>
             </div>
         </div>
         <div class="setting-info-wrapper">
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">Bio</h3>
-                <input type="text" class="setting-info-content-input" placeholder="Thêm bio..." id="setting-input-bio">
+                <input type="text" class="setting-info-content-input" placeholder="Thêm bio..." id="setting-input-bio" value="{{user.bio}}" >
                 <p class="setting-info-content-desc">Bio hiển thị trên trang cá nhân và trong các bài viết (blog) của
                     bạn.</p>
             </div>
             <div class="setting-info-btn">
                 <a class="setting-info-btn-edit" onclick="editProfileBtn('bio')" id="edit-btn-bio">Chỉnh sửa</a>
                 <div class="setting-info-btn-wrapper d-none" id="save-btn-bio">
-                    <a class="setting-info-btn-save">Lưu</a>
+                    <a class="setting-info-btn-save" onclick="submitValueToEditProfile('bio')">Lưu</a>
                     <a class="setting-info-btn-cancel" onclick="cancelEditProfile('bio')">Huỷ</a>
                 </div>
             </div>
         </div>
         <div class="setting-info-wrapper">
             <div class="setting-info-content">
-                <h3 class="setting-info-content-heading">Avartar</h3>
+                <h3 class="setting-info-content-heading">Avatar</h3>
                 <p class="setting-info-content-validImage">Nên là ảnh vuông, chấp nhận các tệp: JPG, PNG hoặc GIF.</p>
             </div>
             <div class="setting-info-avatar" onclick="uploadAvatarUser()" id="setting-upload-div">
                 <input type="file" id="setting-avatar-user" style="display: none;" />
                 <div class="p-realative">
-                    <img src="https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
+                    <img src="{{user.avatar}}"
                         alt="">
                     <a class="setting-info-icon d-none" id="setting-upload-icon"><i class="fa-solid fa-camera"></i></a>
                 </div>
@@ -57,20 +57,20 @@
         <div class="setting-info-wrapper">
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">Email</h3>
-                <input type="text" class="setting-info-content-input" placeholder="Thêm email..." readonly>
+                <input type="text" class="setting-info-content-input" placeholder="Thêm email..." readonly value="{{user.email}}" >
             </div>
         </div>
         <div class="setting-info-wrapper">
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">User Name</h3>
-                <input type="text" class="setting-info-content-input" placeholder="Thêm user name..." readonly>
-                <p class="setting-info-content-desc">URL: https://fullstack.edu.vn/@nguyendonphuoc</p>
+                <input type="text" class="setting-info-content-input" placeholder="Thêm user name..." readonly value="{{{addSlugUser '@' user.slug}}}" >
+                <p class="setting-info-content-desc">URL: https://fullstack.edu.vn/profile/{{{addSlugUser '@' user.slug}}}</p>
             </div>
         </div>
         <div class="setting-info-wrapper">
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">Số điện thoại</h3>
-                <input type="text" class="setting-info-content-input" placeholder="Thêm số điện thoại..." readonly>
+                <input type="text" class="setting-info-content-input" placeholder="Thêm số điện thoại..." readonly value="{{user.phoneNumber}}">
                 <p class="setting-info-content-desc">Điện thoại kết nối với F8.</p>
             </div>
         </div>
@@ -81,13 +81,13 @@
             <div class="setting-info-content">
                 <h3 class="setting-info-content-heading">Facebook.</h3>
                 <input type="text" class="setting-info-content-input"
-                    placeholder="Eg. https://www.facebook.com/hoclaptrinhf8" readonly id="setting-input-facebook">
+                    placeholder="Eg. https://www.facebook.com/hoclaptrinhf8" readonly id="setting-input-facebook" value="{{user.facebook}}" >
             </div>
             <div class="setting-info-btn">
                 <a class="setting-info-btn-edit" onclick="editProfileBtn('facebook')" id="edit-btn-facebook">Chỉnh
                     sửa</a>
                 <div class="setting-info-btn-wrapper d-none" id="save-btn-facebook">
-                    <a class="setting-info-btn-save">Lưu</a>
+                    <a class="setting-info-btn-save" onclick="submitValueToEditProfile('facebook')">Lưu</a>
                     <a class="setting-info-btn-cancel" onclick="cancelEditProfile('facebook')">Huỷ</a>
                 </div>
             </div>
@@ -108,3 +108,6 @@
         </div>
     </div>
 </div>
+<form method="POST" action="/profile/settings/edit?_method=PUT" id="form-setting-edit-profile" hidden>
+  <input type="text" id="edit-profile-input">
+</form>
