@@ -3,6 +3,7 @@ const User = require('../models/User');
 const UserCourse = require('../models/UserCourse');
 const { CourseDTO } = require('../dto/course');
 const { UserDTO } = require('../dto/user');
+const { configPathUpload } = require('../helper/multer');
 
 const getInfoProfileService = async (id) => {
     const userCourse = await UserCourse.findOne({ idUser: id });
@@ -38,9 +39,16 @@ const editInfoUserService = async (info, userId) => {
         );
     }
 };
+const editAvatarService = async (userId, path) => {
+    const user = await User.updateOne(
+        { _id: userId },
+        { $set: { avatar: configPathUpload(path) } },
+    );
+};
 
 module.exports = {
     getInfoProfileService,
     getInfoUserService,
     editInfoUserService,
+    editAvatarService,
 };

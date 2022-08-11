@@ -17,11 +17,11 @@
         </div>
         <div class="p-realative">
             <a  onclick="showUserMenu()"><img
-                    src="{{me.avatar}}"
+                    src="/{{me.avatar}}"
                     class="nav-action-avatar hide" alt="" id="user-img"></a>
             <ul class="nav-list d-none" id="user-menu">
                 <li class="nav-list-item gap0-15px d-flex align-center ">
-                    <img src="{{me.avatar}}"
+                    <img src="/{{me.avatar}}"
                         class="nav-list-img" alt="">
                     <div class="nav-list-userInfo">
                         <h3 class="nav-list-name">{{me.fullName}}</h3>
@@ -45,7 +45,7 @@
                 </li>
                 <hr>
                 <li class="nav-list-item">
-                    <a href="#">Cài đặt</a>
+                    <a href="/profile/settings">Cài đặt</a>
                 </li>
                 <li class="nav-list-item">
                     <a href="#" onclick="logOut()">Đăng xuất</a>

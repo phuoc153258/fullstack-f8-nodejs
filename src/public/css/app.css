@@ -247,6 +247,8 @@ html ::-webkit-scrollbar-track {
       font-weight: 400; }
       .nav-progress-completed strong {
         font-weight: 600; }
+    .nav-progress-chart {
+      position: relative; }
   .nav-list {
     position: absolute;
     background-color: #fff;
@@ -708,18 +710,21 @@ html ::-webkit-scrollbar-track {
       font-size: 14px;
       line-height: 48px; }
 
-.chart {
+.chart-percent {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
   text-align: center;
-  position: relative; }
-  .chart-percent {
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 30px;
-    position: absolute;
-    top: 6px;
-    right: 7px; }
+  line-height: 30px;
+  position: absolute;
+  top: 6px;
+  right: 7px; }
+
+.chart-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
 .learn {
   width: 77%;
@@ -1231,7 +1236,7 @@ html ::-webkit-scrollbar-track {
         height: 37px;
         line-height: 37px;
         padding: 0 16px;
-        transition: background-color .1s,border-color .1s,color .1s,fill .1s; }
+        transition: background-color 0.1s, border-color 0.1s, color 0.1s, fill 0.1s; }
       .setting-info-btn-edit:hover {
         border-color: rgba(0, 0, 0, 0.54);
         color: rgba(0, 0, 0, 0.68); }
@@ -1245,7 +1250,7 @@ html ::-webkit-scrollbar-track {
         cursor: pointer;
         font-size: 14px;
         padding: 8px 16px;
-        transition: background-color .1s,border-color .1s,color .1s,fill .1s;
+        transition: background-color 0.1s, border-color 0.1s, color 0.1s, fill 0.1s;
         border-color: #f05123;
         color: #f05123;
         margin-right: 8px; }
@@ -1257,7 +1262,7 @@ html ::-webkit-scrollbar-track {
         cursor: pointer;
         font-size: 14px;
         padding: 8px 16px;
-        transition: background-color .1s,border-color .1s,color .1s,fill .1s;
+        transition: background-color 0.1s, border-color 0.1s, color 0.1s, fill 0.1s;
         border-color: rgba(0, 0, 0, 0.54);
         color: rgba(0, 0, 0, 0.68); }
     .setting-info-avatar {
@@ -1278,3 +1283,120 @@ html ::-webkit-scrollbar-track {
       cursor: pointer; }
     .setting-info-icon:hover {
       color: #fff; }
+
+.learningPath {
+  padding: 0px 95px 60px 95px; }
+  .learningPath-heading {
+    color: #242424;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 20px 0px; }
+  .learningPath-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 840px;
+    word-wrap: break-word;
+    color: #292929;
+    margin-bottom: 80px; }
+  .learningPath-courses {
+    display: flex;
+    gap: 0 20px;
+    margin-top: 24px; }
+  .learningPath-item {
+    border: 2px solid #e8e8e8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 500px; }
+    .learningPath-item-wrapper {
+      display: flex;
+      margin-bottom: 20px; }
+    .learningPath-item-heading {
+      color: #242424;
+      display: block;
+      font-size: 20px;
+      font-weight: 900;
+      padding-bottom: 14px; }
+    .learningPath-item-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      min-height: 120px; }
+    .learningPath-item-img {
+      align-items: center;
+      display: flex;
+      padding-left: 24px; }
+      .learningPath-item-img a {
+        align-items: center;
+        border: 5px solid #f05123;
+        border-radius: 50%;
+        display: flex;
+        height: 122px;
+        justify-content: center;
+        overflow: hidden;
+        width: 122px; }
+      .learningPath-item-img img {
+        border-radius: 50%;
+        height: 98px;
+        object-fit: cover;
+        width: 98px; }
+  .learningPath-progress {
+    display: flex;
+    gap: 0 10px;
+    margin-bottom: 25px; }
+    .learningPath-progress-item {
+      position: relative; }
+      .learningPath-progress-item-icon {
+        -webkit-filter: grayscale(73%);
+        filter: grayscale(73%); }
+  .learningPath-btn {
+    width: 30%;
+    background-color: #f05123;
+    color: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #f05123;
+    border-radius: 999px !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    padding: 9px 16px;
+    text-align: center;
+    transition: .3s ease;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap; }
+  .learningPath-contact {
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    overflow: hidden; }
+    .learningPath-contact-heading {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.6;
+      margin: 20px 0px; }
+    .learningPath-contact-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 14px 0px; }
+    .learningPath-contact-btn {
+      border: 2px solid #292929;
+      border-radius: 999px;
+      color: #292929;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 8px;
+      padding: 10px 16px;
+      text-align: center;
+      transition: .2s ease; }
+    .learningPath-contact-img img {
+      width: 420px; }
+    .learningPath-contact-content {
+      width: 400px; }

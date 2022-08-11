@@ -35,7 +35,7 @@ function login() {
         .then((data) => {
             if (data.message === 'Login success !!!') {
                 setCookie('token', data.token, 1);
-                window.location = 'http://localhost:3000/';
+                history.back();
             } else {
                 $('#login-message').append(
                     '*Tài khoản hoặc mật khẩu chưa chính xác !!!',

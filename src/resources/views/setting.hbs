@@ -39,9 +39,8 @@
                 <p class="setting-info-content-validImage">Nên là ảnh vuông, chấp nhận các tệp: JPG, PNG hoặc GIF.</p>
             </div>
             <div class="setting-info-avatar" onclick="uploadAvatarUser()" id="setting-upload-div">
-                <input type="file" id="setting-avatar-user" style="display: none;" />
                 <div class="p-realative">
-                    <img src="{{user.avatar}}"
+                    <img src="/{{user.avatar}}"
                         alt="">
                     <a class="setting-info-icon d-none" id="setting-upload-icon"><i class="fa-solid fa-camera"></i></a>
                 </div>
@@ -49,7 +48,7 @@
             <div class="setting-info-btn">
                 <a class="setting-info-btn-edit" onclick="editUploadBtn()" id="edit-btn-upload">Chỉnh sửa</a>
                 <div class="setting-info-btn-wrapper d-none" id="save-btn-upload">
-                    <a class="setting-info-btn-save">Lưu</a>
+                    <a class="setting-info-btn-save" onclick="submitBtnToUploadAvatar()">Lưu</a>
                     <a class="setting-info-btn-cancel" onclick="cancelEditUpload()">Huỷ</a>
                 </div>
             </div>
@@ -110,4 +109,7 @@
 </div>
 <form method="POST" action="/profile/settings/edit?_method=PUT" id="form-setting-edit-profile" hidden>
   <input type="text" id="edit-profile-input">
+</form>
+<form action="/profile/settings/upload" method="POST" enctype="multipart/form-data" id="form-setting-avatar">
+    <input type="file" id="setting-avatar-user" style="display: none;" name="file" />
 </form>

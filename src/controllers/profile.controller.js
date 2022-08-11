@@ -56,8 +56,19 @@ const editProfile = async (req, res) => {
     }
 };
 
+const editAvatar = async (req, res) => {
+    try {
+        const { userId, file } = req;
+        profileService.editAvatarService(userId, file.path);
+        res.redirect('back');
+    } catch (error) {
+        res.redirect('back');
+    }
+};
+
 module.exports = {
     show,
     settings,
     editProfile,
+    editAvatar,
 };

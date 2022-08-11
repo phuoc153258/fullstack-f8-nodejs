@@ -10,8 +10,7 @@ const User = new Schema(
         bio: { type: String, required: true },
         avatar: {
             type: String,
-            default:
-                'https://static.fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg',
+            default: 'img/fallback-avatar.155cdb2376c5d99ea151.jpg',
         },
         phoneNumber: { type: Number, default: 0 },
         facebook: { type: String, default: '' },

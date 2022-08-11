@@ -3,8 +3,8 @@ const router = express.Router();
 const { validateSlug } = require('../middlewares/validate/index');
 const profileMiddleware = require('../middlewares/profile.middleware');
 const baseMiddleware = require('../middlewares/base.middleware');
-const { validateInfoUpdate } = require('../middlewares/validate/index');
 const authMiddleware = require('../middlewares/auth.middleware');
+const uploadMiddleware = require('../middlewares/upload.middleware');
 const profileController = require('../controllers/profile.controller');
 
 router.get(
@@ -19,10 +19,16 @@ router.get(
 router.put(
     '/settings/edit',
     authMiddleware.isAuthenticate,
-    validateInfoUpdate,
     baseMiddleware.runConditionMiddleware,
     profileMiddleware.checkValueEditProfile,
     profileController.editProfile,
+);
+
+router.post(
+    '/settings/upload',
+    authMiddleware.isAuthenticate,
+    uploadMiddleware.uploadSingle,
+    profileController.editAvatar,
 );
 
 router.get(

@@ -24,6 +24,10 @@ const Course = new Schema({
         },
     ],
     slug: { type: String, required: true },
+    icon: {
+        type: String,
+        default: '',
+    },
 });
 
 module.exports = mongoose.model('Course', Course);

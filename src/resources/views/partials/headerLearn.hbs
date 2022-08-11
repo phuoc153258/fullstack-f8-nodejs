@@ -9,9 +9,11 @@
     </div>
     <div class="nav-action">
         <div class="nav-progress">
-            <span class="chart" data-percent="{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}">
-                <span class="chart-percent">{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}%</span>
-            </span>
+            <div class="nav-progress-chart">
+                <span class="chart" data-percent="{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}">
+                    <span class="chart-percent">{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}%</span>
+                </span>
+            </div>
             <p class="nav-progress-completed"><strong>{{{calcLessonCouseCompleted course.courseContent user.detailCourses course._id}}}</strong> bài học</p>
         </div>
         <div class="nav-progress">
