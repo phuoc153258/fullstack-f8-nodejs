@@ -5,9 +5,9 @@
                 <i class="fa-solid fa-plus slider-icon"></i>
             </div>
             <ul class="slider-list pt-5px">
-                <li><a href="#" class="slider-item"><i class="fa-solid fa-house"></i><span>Home</span></i></a>
+                <li><a href="/" class="slider-item"><i class="fa-solid fa-house"></i><span>Home</span></i></a>
                 </li>
-                <li><a href="#" class="slider-item  home-active"><i class="fa-solid fa-road"></i><span>Lộ trình</span></i></a>
+                <li><a href="/learning-paths" class="slider-item  home-active"><i class="fa-solid fa-road"></i><span>Lộ trình</span></i></a>
                 </li>
                 <li><a href="#" class="slider-item"><i class="fa-solid fa-lightbulb"></i><span>Học</span></i></a>
                 </li>
@@ -34,28 +34,9 @@
                     </div>
                 </div>
                 <div class="learningPath-progress">
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
+                    {{{ handleProgressCourses courses userCourse 1}}}
                 </div>
-                <a class="learningPath-btn">Xem chi tiết</a>
+                <a class="learningPath-btn" onclick="goDetailsRoadMap('front-end-development')">Xem chi tiết</a>
             </div>
             <div class="learningPath-item">
                 <div class="learningPath-item-wrapper">
@@ -70,28 +51,9 @@
                     </div>
                 </div>
                 <div class="learningPath-progress">
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
-                    <div class="learningPath-progress-item">
-                        <span class="chart" data-percent="50">
-                            <img src="https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png" alt="" class="chart-item learningPath-progress-item-icon">
-                        </span>
-                    </div>
+                    {{{ handleProgressCourses courses userCourse 2}}}
                 </div>
-                <a class="learningPath-btn">Xem chi tiết</a>
+                <a class="learningPath-btn" onclick="goDetailsRoadMap('back-end-development')">Xem chi tiết</a>
             </div>
         </div>
         <div class="learningPath-contact">
@@ -102,7 +64,7 @@
                 <p class="learningPath-contact-desc">
                     Hàng nghìn người khác đang học lộ trình giống như bạn. Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau trong quá trình học nhé.
                 </p>
-                <a href="" class="learningPath-contact-btn">
+                <a href="https://www.facebook.com/groups/f8official" class="learningPath-contact-btn">
                     Tham gia nhóm
                 </a>
             </div>
@@ -112,3 +74,6 @@
         </div>
     </div>
 </div>
+
+<form method="get" id="form-submit-detailsCourse"></form>
+<form method="get" id="form-submit-roadmap"></form>

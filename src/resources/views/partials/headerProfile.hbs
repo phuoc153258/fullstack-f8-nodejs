@@ -1,59 +1,64 @@
 <div class="navProfile">
-    <div class="navProfile-logo">
-        <a href="/">
-            <img src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="">
-        </a>
-        <a href="/">
-            <h4 class="navProfile-heading">
-                <i class="fa-solid fa-angle-left"></i>
-                Quay lại
-            </h4>
-        </a>
-    </div>
-    <div class="navProfile-actions">
-        {{#if me}}
-        <div class="navProfile-actions-noti">
-            <i class="fa-solid fa-bell"></i>
-        </div>
-        <div class="p-realative">
-            <a  onclick="showUserMenu()"><img
-                    src="/{{me.avatar}}"
-                    class="nav-action-avatar hide" alt="" id="user-img"></a>
-            <ul class="nav-list d-none" id="user-menu">
-                <li class="nav-list-item gap0-15px d-flex align-center ">
-                    <img src="/{{me.avatar}}"
-                        class="nav-list-img" alt="">
-                    <div class="nav-list-userInfo">
-                        <h3 class="nav-list-name">{{me.fullName}}</h3>
-                        <p class="nav-list-username">@{{me.slug}}</p>
-                    </div>
-                </li>
-                <hr>
-                <li class="nav-list-item">
-                    <a href="/profile/@{{me.slug}}">Trang cá nhân</a>
-                </li>
-                <hr>
-                <li class="nav-list-item">
-                    <a href="#">Viết blog</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="#">Bài viết của tôi</a>
-                </li>
-                <hr>
-                <li class="nav-list-item">
-                    <a href="#">Bài viết đã lưu</a>
-                </li>
-                <hr>
-                <li class="nav-list-item">
-                    <a href="/profile/settings">Cài đặt</a>
-                </li>
-                <li class="nav-list-item">
-                    <a href="#" onclick="logOut()">Đăng xuất</a>
-                </li>
-            </ul>
-        </div>
-        {{else}}
-        <a href="/auth/login" class="nav-action-loginBtn">Đăng nhập</a>
-        {{/if}}
-    </div>
+  <div class="navProfile-logo">
+    <a href="/">
+      <img
+        src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+        alt=""
+      />
+    </a>
+    <a href="/">
+      <h4 class="navProfile-heading">
+        <i class="fa-solid fa-angle-left"></i>
+        Quay lại
+      </h4>
+    </a>
+  </div>
+  <div class="navProfile-actions">
+    {{#if me}}
+      <div class="navProfile-actions-noti">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="p-realative">
+        <a onclick="showUserMenu()"><img
+            src="/{{me.avatar}}"
+            class="nav-action-avatar hide"
+            alt=""
+            id="user-img"
+          /></a>
+        <ul class="nav-list d-none" id="user-menu">
+          <li class="nav-list-item gap0-15px d-flex align-center">
+            <img src="/{{me.avatar}}" class="nav-list-img" alt="" />
+            <div class="nav-list-userInfo">
+              <h3 class="nav-list-name">{{me.fullName}}</h3>
+              <p class="nav-list-username">@{{me.slug}}</p>
+            </div>
+          </li>
+          <hr />
+          <li class="nav-list-item">
+            <a href="/profile/@{{me.slug}}">Trang cá nhân</a>
+          </li>
+          <hr />
+          <li class="nav-list-item">
+            <a href="#">Viết blog</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">Bài viết của tôi</a>
+          </li>
+          <hr />
+          <li class="nav-list-item">
+            <a href="#">Bài viết đã lưu</a>
+          </li>
+          <hr />
+          <li class="nav-list-item">
+            <a href="/profile/settings">Cài đặt</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" onclick="logOut()">Đăng xuất</a>
+          </li>
+        </ul>
+      </div>
+    {{else}}
+      <a href="/auth/login" class="nav-action-loginBtn">Đăng nhập</a>
+    {{/if}}
+  </div>
 </div>

@@ -102,6 +102,7 @@ function calcLessonCouseCompleted(courseArr, userArr, courseId) {
 
 function calcPercentCouseCompleted(courseArr, userArr, courseId) {
     let countLesson = 0;
+    if(!userArr) return 0
     for (let index = 0; index < courseArr.length; ++index) {
         countLesson += courseArr[index].lesson.length;
     }
@@ -294,6 +295,21 @@ function addSlugUser(a, b) {
     return a + b;
 }
 
+function handleProgressCourses(courses,userCourse,type){
+    let str = ``
+    for (const course of courses) {
+        if(course.role.includes(type)) {
+                str = str + `
+                <div class="learningPath-progress-item" onclick="goDetailCourses('${course.slug}')">
+                    <span class="chart" data-percent="${calcPercentCouseCompleted(course.courseContent, userCourse.detailCourses, course._id)}">
+                        <img src="/${course.icon}" alt="" class="chart-item learningPath-progress-item-icon">
+                    </span>
+                </div>`
+        }
+    }
+    return str
+}
+
 module.exports = {
     addLeadingZeros,
     getTotalLengthLesson,
@@ -320,4 +336,5 @@ module.exports = {
     handleNextButton,
     formatDate,
     addSlugUser,
+    handleProgressCourses
 };

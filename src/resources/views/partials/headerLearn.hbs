@@ -1,29 +1,51 @@
 <div class="nav bg-nav-dark border-none">
-    <div class="nav-logo">
-        <a href="/"><i class="fa-solid fa-chevron-left color-white" style="padding-right: 25px;"></i></a>
-        <a href="/">
-            <img class="nav-logo-img"
-                src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png" alt="">
-        </a>
-        <h4 class="nav-logo-heading color-white">{{ course.name }}</h4>
+  <div class="nav-logo">
+    <a href="/"><i
+        class="fa-solid fa-chevron-left color-white"
+        style="padding-right: 25px;"
+      ></i></a>
+    <a href="/">
+      <img
+        class="nav-logo-img"
+        src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+        alt=""
+      />
+    </a>
+    <h4 class="nav-logo-heading color-white">{{course.name}}</h4>
+  </div>
+  <div class="nav-action">
+    <div class="nav-progress">
+      <div class="nav-progress-chart">
+        <span
+          class="chart"
+          data-percent="{{{calcPercentCouseCompleted
+            course.courseContent
+            user.detailCourses
+            course._id
+          }}}"
+        >
+          <span class="chart-percent">{{{calcPercentCouseCompleted
+              course.courseContent
+              user.detailCourses
+              course._id
+            }}}%</span>
+        </span>
+      </div>
+      <p class="nav-progress-completed"><strong>{{{calcLessonCouseCompleted
+            course.courseContent
+            user.detailCourses
+            course._id
+          }}}</strong>
+        bài học</p>
     </div>
-    <div class="nav-action">
-        <div class="nav-progress">
-            <div class="nav-progress-chart">
-                <span class="chart" data-percent="{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}">
-                    <span class="chart-percent">{{{calcPercentCouseCompleted course.courseContent user.detailCourses course._id}}}%</span>
-                </span>
-            </div>
-            <p class="nav-progress-completed"><strong>{{{calcLessonCouseCompleted course.courseContent user.detailCourses course._id}}}</strong> bài học</p>
-        </div>
-        <div class="nav-progress">
-            <i class="fa-solid fa-note-sticky color-white"></i>
-            <p class="nav-progress-completed">Ghi chú</p>
-        </div>
-        <div class="nav-progress">
-            <i class="fa-solid fa-circle-question color-white"></i>
-            <p class="nav-progress-completed">Hướng dẫn</p>
-        </div>
+    <div class="nav-progress">
+      <i class="fa-solid fa-note-sticky color-white"></i>
+      <p class="nav-progress-completed">Ghi chú</p>
+    </div>
+    <div class="nav-progress">
+      <i class="fa-solid fa-circle-question color-white"></i>
+      <p class="nav-progress-completed">Hướng dẫn</p>
+    </div>
 
-    </div>
+  </div>
 </div>

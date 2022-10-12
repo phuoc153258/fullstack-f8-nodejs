@@ -71,6 +71,19 @@
         });
     </script>
 
+    <script>
+        function goDetailCourses(slug) {
+            const formSubmit = document.querySelector('#form-submit-detailsCourse')
+            formSubmit.setAttribute("action",`/courses/${slug}`)
+            formSubmit.submit()
+        }
+        function goDetailsRoadMap(slug) {
+            const formSubmit = document.querySelector('#form-submit-roadmap')
+            formSubmit.setAttribute("action",`/learning-paths/${slug}`)
+            formSubmit.submit()
+        }
+    </script>
+
 </body>
 
 </html>

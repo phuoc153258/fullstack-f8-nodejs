@@ -108,7 +108,7 @@ html ::-webkit-scrollbar-track {
 }
 .home-active {
     background-color: #f5f5f5;
-    color: #1a1a1a;
+    color: #1a1a1a !important;
 }
 .banner-color-1 {
     background-color: #2877fa;
@@ -127,4 +127,25 @@ html ::-webkit-scrollbar-track {
 }
 .gap0-15px {
     gap: 0 15px !important;
+}
+.mtb-15px p{
+    margin: 15px 0px ;
+}
+.w-70{
+    width: 70% !important;
+}
+.fz-14px{
+    font-size: 14px !important;
+}
+.flex-direction-unset{
+    flex-direction: unset !important;
+}
+.w-100{
+    width: 100% !important;
+}
+.gap-20px{
+    gap: 0 20px !important;
+}
+.mb-15px{
+    margin-bottom: 15px !important;
 }

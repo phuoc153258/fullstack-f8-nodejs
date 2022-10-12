@@ -13,12 +13,13 @@ class CourseDTO {
         'courseContent',
         'role',
         'slug',
+        'icon',
     ];
 
     constructor(course) {
         this.obj = course;
     }
-
+   
     toSimple(fields) {
         return toJSON(this.fillable, fields, this.obj);
     }
